@@ -1,0 +1,14 @@
+Scripts:
+    Player movement
+    Camera Movement
+    Damagable/Health component
+    Player Attack script (No extra weapons, barebones)
+    (SIMPLE) Generic Enemy AI
+    Rocket Health
+    Win/Lose conditions
+Art:
+    Basic outline of map
+    concept art?
+    Some implemented character assets.
+Music:
+    no
