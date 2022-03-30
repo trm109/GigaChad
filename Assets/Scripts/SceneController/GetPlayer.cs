@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GetPlayer : MonoBehaviour
 {
-    public static GameObject player;
-    private static void Start() {
-        
+    [SerializeField]
+    public GameObject player;
+    public void Start(){
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 }

@@ -1,7 +1,7 @@
 Scripts:
-    Player movement
-    Camera Movement
-    Damagable/Health component
+    Player movement X
+    PrimitiveCamera Movement X
+    Damagable/Health component <<
     Player Attack script (No extra weapons, barebones)
     (SIMPLE) Generic Enemy AI
     Rocket Health
