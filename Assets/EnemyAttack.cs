@@ -5,9 +5,9 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    public static void Attack()
     {
-        
+
     }
 
     // Update is called once per frame
