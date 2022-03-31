@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GetTarget : MonoBehaviour
 {
-    bool playertarget = false;
+    public bool playertarget = false;
 
     public void Target()
     {

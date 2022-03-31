@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
+    private GameObject target;
     public float damage;
     // Start is called before the first frame update
-    void Start()
+    void LateStart()
     {
-        float time = (Time.realtimeSinceStartup) / 60;
-        if (time < 2) { damage = 1; }
-        else if (time < 3) { damage = 2; }
-        else { damage = 3; }
+        if(GetComponent<GetTarget>().playertarget){
+            target = GetComponent<GetPlayer>().player;
+        }else{
+            target = GetComponent<GetAirship>().airship;
+        }
     }
 
     // Start is called before the first frame update
