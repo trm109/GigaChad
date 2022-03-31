@@ -6,7 +6,8 @@ public class GetPlayer : MonoBehaviour
 {
     [SerializeField]
     public GameObject player;
-    public void Start(){
+    public void Awake(){
         player = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log("GETPLAYER");
     }
 }
