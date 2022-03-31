@@ -10,7 +10,7 @@ public class FollowPlayer : MonoBehaviour
     private GameObject player;
     private Vector3 initialOffset;
     // Start is called before the first frame update
-    void Start()
+    void LateStart()
     {
         player = GetComponent<GetPlayer>().player;
         initialOffset = transform.position - player.transform.position;
