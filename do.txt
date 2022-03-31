@@ -8,7 +8,7 @@ Scripts:
         AOE Detection
         Send Damage Signal
     (SIMPLE) Generic Enemy AI
-    Airship Health
+    Airship Health X
     Win/Lose conditions
 Art:
     Basic outline of map

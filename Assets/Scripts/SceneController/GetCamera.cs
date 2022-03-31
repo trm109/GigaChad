@@ -5,8 +5,8 @@ using UnityEngine;
 public class GetCamera : MonoBehaviour
 {
     [SerializeField]
-    public GameObject camera;
+    public GameObject mCamera;
     public void Start(){
-        camera = GameObject.FindGameObjectWithTag("MainCamera");
+        mCamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 }
