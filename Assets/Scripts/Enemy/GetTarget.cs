@@ -9,6 +9,6 @@ public class GetTarget : MonoBehaviour
     public void Target()
     {
         float n = Random.Range(0, 10);
-        if (n < 5) { playertarget = true}
+        if (n < 5) { playertarget = true; }
     }
 }

@@ -8,7 +8,7 @@ public class EnemyAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int time = (Time.realtime.SinceStartup) / 60;
+        float time = (Time.realtimeSinceStartup) / 60;
         if (time < 2) { damage = 1; }
         else if (time < 3) { damage = 2; }
         else { damage = 3; }
