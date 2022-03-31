@@ -768,6 +768,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8932700700750807656, guid: 2e9e11d743ff5d91c94bf738d5726fc6, type: 3}
+      propertyPath: range
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8932700700750807663, guid: 2e9e11d743ff5d91c94bf738d5726fc6, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -812,5 +816,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 456356680439579731, guid: 2e9e11d743ff5d91c94bf738d5726fc6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2e9e11d743ff5d91c94bf738d5726fc6, type: 3}

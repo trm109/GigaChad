@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    //Prevent from merging into the player/airship
+
+    
     [SerializeField]
     private float speed = 5f;
     private Vector3 movement;
