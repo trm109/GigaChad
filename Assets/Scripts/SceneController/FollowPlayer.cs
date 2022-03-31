@@ -11,7 +11,7 @@ public class FollowPlayer : MonoBehaviour
     private GameObject player;
     private Vector3 initialOffset;
     // Start is called before the first frame update
-    void LateStart()
+    void Start()
     {
         Debug.Log("Referencing!");
         player = GetComponent<GetPlayer>().player;
@@ -21,6 +21,10 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = player.transform.position + initialOffset;
+        if(player){
+            transform.position = player.transform.position + initialOffset;
+        }else{
+            player = GetComponent<GetPlayer>().player;
+        }
     }
 }
