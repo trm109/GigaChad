@@ -16,8 +16,9 @@ public class EnemyHealth : MonoBehaviour
         maxHealth = health;
     }
     //Can heal too.
-    public void TakeDamage(float dmg)
+    public void Damage(float dmg)
     {
+        Debug.Log("<<<Enemy Damaged");
         health -= dmg;
         health = Mathf.Clamp(health, 0, maxHealth);
         if (health == 0)

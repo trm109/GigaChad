@@ -26,6 +26,7 @@ public class EnemyAttack : MonoBehaviour
     // Start is called before the first frame update
     public void Attack()
     {
+        Debug.Log("Enemy Attacking");
         if(GetComponent<GetTarget>().playertarget){
             target.GetComponent<PlayerHealth>().Damage(damage);
         }else{
