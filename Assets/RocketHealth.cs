@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RocketHealth : MonoBehaviour
 {
+    [SerializeField]
     private int health = 200;
     private int maxhealth;
 
@@ -21,6 +22,6 @@ public class RocketHealth : MonoBehaviour
 
     public void RocketDamage(int n)
     {
-        health = -n;
+        health -= n;
     }
 }
