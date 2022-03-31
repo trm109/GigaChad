@@ -11,7 +11,7 @@ public class FollowPlayer : MonoBehaviour
     private GameObject player;
     private Vector3 initialOffset;
     // Start is called before the first frame update
-    void LateStart()
+    void Start()
     {
         Debug.Log("Referencing!");
         player = GetComponent<GetPlayer>().player;

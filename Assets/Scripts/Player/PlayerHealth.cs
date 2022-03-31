@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
         maxHealth = health;
     }
     //Can heal too.
-    public void TakeDamage(float dmg){
+    public void Damage(float dmg){
         health -= dmg;
         health = Mathf.Clamp(health,0,maxHealth);
         if(health == 0){

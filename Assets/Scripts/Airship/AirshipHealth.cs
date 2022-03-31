@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class AirshipHealth : MonoBehaviour
 {
-    private int health = 200;
-    private int maxhealth;
+    private float health;
+    private float maxhealth = 200f;
 
     // Start is called before the first frame update
     void Start()
     {
-        maxhealth = health;
+        health = maxhealth;
     }
 
    
-    public void AirshipDamage(int n)
+    public void Damage(float n)
     {
-        health = -n;
+        health -= n;
+        health = Mathf.Clamp(health,0,maxhealth);
+        if(health == 0f){
+            Die();
+        }
     }
-
+    private void Die(){
+        //Lose condition
+    }
 }
