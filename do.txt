@@ -2,7 +2,11 @@ Scripts:
     Player movement X
     PrimitiveCamera Movement X
     Damagable/Health component <<
-    Player Attack script (No extra weapons, barebones)
+    Player Look script X
+    Player attack script(No extra weapons, barebones)
+        Inputs X
+        AOE Detection
+        Send Damage Signal
     (SIMPLE) Generic Enemy AI
     Airship Health
     Win/Lose conditions
