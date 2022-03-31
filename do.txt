@@ -4,7 +4,7 @@ Scripts:
     Damagable/Health component <<
     Player Attack script (No extra weapons, barebones)
     (SIMPLE) Generic Enemy AI
-    Rocket Health
+    Airship Health
     Win/Lose conditions
 Art:
     Basic outline of map
