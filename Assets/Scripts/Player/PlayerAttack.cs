@@ -44,7 +44,7 @@ public class PlayerAttack : MonoBehaviour
         foreach(EnemyHealth l in list){
             Vector2 toEnemy = new Vector2(l.gameObject.transform.position.x - transform.position.x,
                                         l.gameObject.transform.position.z - transform.position.z);
-            if(IsHit(toEnemy, transform.forward)){
+            if(IsHit(toEnemy, new Vector2(transform.forward.x,transform.forward.z))){
                 l.Damage(damage);
             }
         }
@@ -62,13 +62,18 @@ public class PlayerAttack : MonoBehaviour
         }
         return list;
     }
+    //
+    //
+    //
     public bool IsHit(Vector2 a, Vector2 b){
+        Debug.Log("Vector A::" + a);
+        Debug.Log("Vector B::" + b);
         Debug.Log("Is Hit, " + Vector2.Dot(a.normalized,b) + "\n"+
                     " toEnemy = " + a.normalized +
                     ", transform.position = " + b);
         //and in the proper angle
         if(Vector2.Dot(a.normalized,b.normalized) < angle){
-            Debug.Log("Enemy not in angle: " + Vector2.Dot(a.normalized,b.normalized));
+            Debug.Log("Enemy not in angle: " + Vector2.Dot(a.normalized,b.normalized) + " < " + angle);
             return false;
         }
         //if it doesn't trigger the false checks, return true.

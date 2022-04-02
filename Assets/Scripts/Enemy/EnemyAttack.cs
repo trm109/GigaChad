@@ -16,17 +16,17 @@ public class EnemyAttack : MonoBehaviour
     {
         if(GetComponent<GetTarget>().playertarget){
             target = GetComponent<GetPlayer>().player;
-            Debug.Log("Assigned target to Player");
+            //Debug.Log("Assigned target to Player");
         }else{
             target = GetComponent<GetAirship>().airship;
-            Debug.Log("Assigned target to Airship");
+            //Debug.Log("Assigned target to Airship");
         }
     }
 
     // Start is called before the first frame update
     public void Attack()
     {
-        Debug.Log("Enemy Attacking");
+        //Debug.Log("Enemy Attacking");
         if(GetComponent<GetTarget>().playertarget){
             target.GetComponent<PlayerHealth>().Damage(damage);
         }else{
