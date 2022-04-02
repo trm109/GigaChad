@@ -1182,7 +1182,7 @@ GameObject:
   - component: {fileID: 7266353899058887724}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1282,6 +1282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39173e6d1eb57232bb28916c1055573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winScreen: {fileID: 3500633180737155411}
+  loseScreen: {fileID: 709787167532988477}
 --- !u!1 &8360847718100794585
 GameObject:
   m_ObjectHideFlags: 0

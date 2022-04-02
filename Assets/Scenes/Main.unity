@@ -544,6 +544,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2663204667913481607, guid: ee2edc52f4a8c846f8ee3e6c1b28f3a1, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093533682452650605, guid: ee2edc52f4a8c846f8ee3e6c1b28f3a1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558615265468421419, guid: ee2edc52f4a8c846f8ee3e6c1b28f3a1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558615265468421419, guid: ee2edc52f4a8c846f8ee3e6c1b28f3a1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558615265468421419, guid: ee2edc52f4a8c846f8ee3e6c1b28f3a1, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8613535812713486855, guid: ee2edc52f4a8c846f8ee3e6c1b28f3a1, type: 3}
       propertyPath: m_Height
       value: 2
@@ -702,6 +722,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3471952447266947543, guid: 4aef9e727fa55f6258c3a9d667c774a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3471952447266947543, guid: 4aef9e727fa55f6258c3a9d667c774a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3471952447266947543, guid: 4aef9e727fa55f6258c3a9d667c774a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8009980264209552768, guid: 4aef9e727fa55f6258c3a9d667c774a9, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -715,6 +747,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 954392854601800629, guid: d5fb736461b8af853adbd503a7c09fb2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3648826274815008276, guid: d5fb736461b8af853adbd503a7c09fb2, type: 3}
       propertyPath: m_Name
       value: Controller

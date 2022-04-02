@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AirshipHealth : MonoBehaviour
 {
+    private UIController gameController;
     private float health;
     private float maxhealth = 200f;
 
@@ -11,6 +12,7 @@ public class AirshipHealth : MonoBehaviour
     void Start()
     {
         health = maxhealth;
+        gameController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();
     }
 
    
@@ -24,5 +26,11 @@ public class AirshipHealth : MonoBehaviour
     }
     private void Die(){
         //Lose condition
+        gameController.ShowLoseScreen();
+        //Lock Player Movement
+        //Prevent Enemies movement.
+        //
+        //Prevent UI Interaction (upgrades)
+
     }
 }

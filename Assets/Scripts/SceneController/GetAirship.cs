@@ -8,6 +8,6 @@ public class GetAirship : MonoBehaviour
     public GameObject airship;
     public void Awake(){
         airship = GameObject.FindGameObjectWithTag("Airship");
-        Debug.Log("GETAIRSHIP");
+        //Debug.Log("GETAIRSHIP");
     }
 }
