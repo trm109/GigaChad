@@ -4,22 +4,30 @@ using UnityEngine;
 
 public class AirshipHealth : MonoBehaviour
 {
-    private UIController gameController;
+    [SerializeField]
     private float health;
-    private float maxhealth = 200f;
+    private float maxHealth = 200f;
+
+    [SerializeField]
+    private HealthBar healthBar;    //Reference to the health bar
 
     // Start is called before the first frame update
     void Start()
     {
-        health = maxhealth;
-        gameController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UIController>();
+        health = maxHealth;
+        healthBar.InitializeHealth(maxHealth);
     }
 
-   
+    void Update()
+    {
+        //continuously update health bar for the player
+        healthBar.SetValue(health);
+    }
+
     public void Damage(float n)
     {
         health -= n;
-        health = Mathf.Clamp(health,0,maxhealth);
+        health = Mathf.Clamp(health,0,maxHealth);
         if(health == 0f){
             Die();
         }
