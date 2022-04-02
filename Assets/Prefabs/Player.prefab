@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 8932700700750807659}
   - component: {fileID: 8932700700750807656}
   - component: {fileID: 6407817524463143173}
+  - component: {fileID: 8031478419761693356}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -187,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  healthBar: {fileID: 0}
 --- !u!114 &8932700700750807659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,6 +231,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shieldArea: 5
   angle: 0.5
+--- !u!114 &8031478419761693356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8932700700750807649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19579935d6ce2544b02e4402c0c5c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillVengeance: 0
+  skillRNG: 0
+  skillHealth: 0
+  skillPower: 0
+  kills: 0
 --- !u!1 &8932700701841444712
 GameObject:
   m_ObjectHideFlags: 0
