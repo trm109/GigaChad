@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public GameObject enemyPrefab;
     public float currentEnemyStrength = 1.0f;
-    public float spawnMinimumDist;
-    public float spawnMaximumDist;
+    private float spawnMinimumDist = 50.0f;
+    private float spawnMaximumDist = 75.0f;
+
+
+    private float spawnCD = 0.0f;
+    private float spawnMaxCD = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,25 +22,30 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         currentEnemyStrength = Time.realtimeSinceStartup;
-
+        if(spawnCD > spawnMaxCD){
+            SpawnEnemy();
+            spawnCD = 0;
+        }else{
+            spawnCD += Time.deltaTime;
+        }
     }
     public void SpawnEnemy(){
+        Debug.Log("Spawned Enemy");
         //Assign random position within spawn bounds.
-        Vector3 spawnPosition = new Vector3(RandomFloatInRange(),0,RandomFloatInRange());
+        Vector3 spawnPosition = RandomSpawnVector();
         //Instantiate a gameobject at the new position, and keep reference
+        var newEnemy = Instantiate(enemyPrefab,spawnPosition, Quaternion.identity);
         //GameObject enemy = Instantiate();
         //Apply currentEnemyStrength
+        //newEnemy.GetComponent<EnemyHealth>().
     }
-    public float RandomFloatInRange(){
-        float returnVal = 0;
-        //Ensure max is larger.
-        if(spawnMaximumDist < spawnMinimumDist){
-            var temp = spawnMaximumDist;
-            spawnMaximumDist = spawnMinimumDist;
-            spawnMinimumDist = temp;
-        }
-        int randomSign = Random.value < .5? 1 : -1;
-        returnVal = Random.Range(spawnMinimumDist,spawnMaximumDist);
-        return returnVal * randomSign;
+    public Vector3 RandomSpawnVector(){
+        Vector3 pos = Quaternion.AngleAxis(Random.Range(0,359),Vector3.up) * transform.forward;
+        pos *= (Random.Range(spawnMinimumDist,spawnMaximumDist));
+        return pos;
+    }
+    private void OnDrawGizmos() {
+        //Gizmos.color = new Color(1, 0, 0, 0.5f);
+        Gizmos.DrawCube(transform.position, new Vector3(spawnMinimumDist,1,spawnMinimumDist));  
     }
 }

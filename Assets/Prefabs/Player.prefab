@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46db452c60338a4a79d33a3f6c606ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 5
   range: 5
   angle: 0.5
 --- !u!114 &6407817524463143173
