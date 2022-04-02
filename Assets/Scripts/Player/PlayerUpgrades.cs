@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerUpgrades : MonoBehaviour
 {
+    public enum UpgradeSkill{
+        Vengeance,
+        RNG,
+        Health,
+        Power
+    }
     public int skillVengeance;
     public int skillRNG;
     public int skillHealth;
@@ -24,65 +30,65 @@ public class PlayerUpgrades : MonoBehaviour
         kills = 0;
     }
 
-    public void Upgrade(string skill)
+    public void Upgrade(UpgradeSkill upgradeSkill)
     {
         if(kills >= 10)
         {
             kills -= 10;
-            switch (skill)
+            switch (upgradeSkill)
             {
-                case "Vengeance":
+                case UpgradeSkill.Vengeance:
                     if(skillVengeance < SKILLCAP)
                     {
                         skillVengeance++;
-                        Debug.Log("Upgraded " + skill + " to level " + skillVengeance);
+                        Debug.Log("Upgraded " + upgradeSkill + " to level " + skillVengeance);
                     }
                     else
                     {
-                        Debug.Log("You've maxxed out the " + skill + " skill!");
+                        Debug.Log("You've maxxed out the " + upgradeSkill + " skill!");
                     }
                     break;
-                case "RNG":
+                case UpgradeSkill.RNG:
                     if (skillRNG < SKILLCAP)
                     {
                         skillRNG++;
-                        Debug.Log("Upgraded " + skill + " to level " + skillRNG);
+                        Debug.Log("Upgraded " + upgradeSkill + " to level " + skillRNG);
                     }
                     else
                     {
-                        Debug.Log("You've maxxed out the " + skill + " skill!");
+                        Debug.Log("You've maxxed out the " + upgradeSkill + " skill!");
                     }
                     break;
-                case "Health":
+                case UpgradeSkill.Health:
                     if (skillHealth < SKILLCAP)
                     {
                         skillHealth++;
-                        Debug.Log("Upgraded " + skill + " to level " + skillHealth);
+                        Debug.Log("Upgraded " + upgradeSkill + " to level " + skillHealth);
                     }
                     else
                     {
-                        Debug.Log("You've maxxed out the " + skill + " skill!");
+                        Debug.Log("You've maxxed out the " + upgradeSkill + " skill!");
                     }
                     break;
-                case "Power":
+                case UpgradeSkill.Power:
                     if (skillPower < SKILLCAP)
                     {
                         skillPower++;
-                        Debug.Log("Upgraded " + skill + " to level " + skillPower);
+                        Debug.Log("Upgraded " + upgradeSkill + " to level " + skillPower);
                     }
                     else
                     {
-                        Debug.Log("You've maxxed out the " + skill + " skill!");
+                        Debug.Log("You've maxxed out the " + upgradeSkill + " skill!");
                     }
                     break;
                 default:
-                    Debug.Log("Invalid upgrade name: " + skill);
+                    Debug.Log("Invalid upgrade name: " + upgradeSkill);
                     break;
             }
         }
         else
         {
-            Debug.Log("You don't have enough kills to upgrade " + skill + " yet!");
+            Debug.Log("You don't have enough kills to upgrade " + upgradeSkill + " yet!");
         }
     }
 
@@ -91,26 +97,21 @@ public class PlayerUpgrades : MonoBehaviour
         return kills;
     }
 
-    public int GetCurrentLevel(string skill)
+    public int GetCurrentLevel(UpgradeSkill upgradeSkill)
     {
-        switch (skill)
+        switch (upgradeSkill)
         {
-            case "Vengeance":
+            case UpgradeSkill.Vengeance:
                 return skillVengeance;
-                break;
-            case "RNG":
+            case UpgradeSkill.RNG:
                 return skillRNG;
-                break;
-            case "Health":
+            case UpgradeSkill.Health:
                 return skillHealth;
-                break;
-            case "Power":
+            case UpgradeSkill.Power:
                 return skillPower;
-                break;
             default:
-                Debug.Log("Invalid upgrade name: " + skill);
+                Debug.Log("Invalid upgrade name: " + upgradeSkill);
                 return -1;
-                break;
         }
     }
 }

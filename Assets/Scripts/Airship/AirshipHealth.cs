@@ -34,7 +34,7 @@ public class AirshipHealth : MonoBehaviour
     }
     private void Die(){
         //Lose condition
-        gameController.ShowLoseScreen();
+        //gameController.ShowLoseScreen();
         //Lock Player Movement
         //Prevent Enemies movement.
         //
