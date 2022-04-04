@@ -671,10 +671,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 379338498}
+    - target: {fileID: 1059119823449163770, guid: 4aef9e727fa55f6258c3a9d667c774a9, type: 3}
+      propertyPath: targetField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2777082201028826492, guid: 4aef9e727fa55f6258c3a9d667c774a9, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 379338498}
+    - target: {fileID: 2777082201028826492, guid: 4aef9e727fa55f6258c3a9d667c774a9, type: 3}
+      propertyPath: targetField
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3064585293434568548, guid: 4aef9e727fa55f6258c3a9d667c774a9, type: 3}
       propertyPath: player
       value: 
@@ -823,6 +831,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 379338498}
+    - target: {fileID: 5978662816368617453, guid: 4aef9e727fa55f6258c3a9d667c774a9, type: 3}
+      propertyPath: targetField
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6322658432826851542, guid: 4aef9e727fa55f6258c3a9d667c774a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

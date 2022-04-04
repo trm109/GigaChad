@@ -10,6 +10,7 @@ public class PlayerUpgrades : MonoBehaviour
         Health,
         Power
     }
+    public int[] upgradeCost = new int[]{10,50,100,200};
     public int skillVengeance;
     public int skillRNG;
     public int skillHealth;
@@ -29,67 +30,74 @@ public class PlayerUpgrades : MonoBehaviour
 
         kills = 0;
     }
-
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.Alpha1)){
+            Debug.Log("1 pressed");
+            Upgrade(UpgradeSkill.Vengeance);
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha2)){
+            Upgrade(UpgradeSkill.RNG);
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha3)){
+            Upgrade(UpgradeSkill.Health);
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha4)){
+            Upgrade(UpgradeSkill.Power);
+        }
+    }
     public void Upgrade(UpgradeSkill upgradeSkill)
     {
-        if(kills >= 10)
-        {
-            kills -= 10;
-            switch (upgradeSkill)
-            {
+        switch (upgradeSkill){
                 case UpgradeSkill.Vengeance:
-                    if(skillVengeance < SKILLCAP)
-                    {
-                        skillVengeance++;
-                        Debug.Log("Upgraded " + upgradeSkill + " to level " + skillVengeance);
-                    }
-                    else
-                    {
-                        Debug.Log("You've maxxed out the " + upgradeSkill + " skill!");
+                    if(skillVengeance >= SKILLCAP){
+                        Debug.Log("Skill is already maxed");
+                    }else{
+                        if(kills >= upgradeCost[skillVengeance]){
+                            kills -= upgradeCost[skillVengeance];
+                            skillVengeance++;
+                            Debug.Log("Upgraded Vengeance to level " + skillVengeance);
+                        }else{
+                            Debug.Log("Not enough kills" + kills + " " + upgradeCost[skillVengeance+1]);
+                        }
                     }
                     break;
                 case UpgradeSkill.RNG:
-                    if (skillRNG < SKILLCAP)
-                    {
-                        skillRNG++;
-                        Debug.Log("Upgraded " + upgradeSkill + " to level " + skillRNG);
-                    }
-                    else
-                    {
-                        Debug.Log("You've maxxed out the " + upgradeSkill + " skill!");
+                    if(skillRNG >= SKILLCAP){
+                        Debug.Log("Skill is already maxed");
+                    }else{
+                        if(kills >= upgradeCost[skillRNG]){
+                            kills -= upgradeCost[skillRNG];
+                            skillRNG++;
+                            Debug.Log("Upgraded RNG to level " + skillRNG);
+                        }
                     }
                     break;
                 case UpgradeSkill.Health:
-                    if (skillHealth < SKILLCAP)
-                    {
-                        skillHealth++;
-                        Debug.Log("Upgraded " + upgradeSkill + " to level " + skillHealth);
-                    }
-                    else
-                    {
-                        Debug.Log("You've maxxed out the " + upgradeSkill + " skill!");
+                    if(skillHealth >= SKILLCAP){
+                        Debug.Log("Skill is already maxed");
+                    }else{
+                        if(kills >= upgradeCost[skillHealth]){
+                            kills -= upgradeCost[skillHealth];
+                            skillHealth++;
+                            Debug.Log("Upgraded Health to level " + skillHealth);
+                        }
                     }
                     break;
                 case UpgradeSkill.Power:
-                    if (skillPower < SKILLCAP)
-                    {
-                        skillPower++;
-                        Debug.Log("Upgraded " + upgradeSkill + " to level " + skillPower);
-                    }
-                    else
-                    {
-                        Debug.Log("You've maxxed out the " + upgradeSkill + " skill!");
+                    if(skillPower >= SKILLCAP){
+                        Debug.Log("Skill is already maxed");
+                    }else{
+                        if(kills >= upgradeCost[skillPower]){
+                            kills -= upgradeCost[skillPower];
+                            skillPower++;
+                            Debug.Log("Upgraded Power to level " + skillPower);
+                        }
                     }
                     break;
                 default:
                     Debug.Log("Invalid upgrade name: " + upgradeSkill);
                     break;
             }
-        }
-        else
-        {
-            Debug.Log("You don't have enough kills to upgrade " + upgradeSkill + " yet!");
-        }
     }
 
     public int GetKills()
