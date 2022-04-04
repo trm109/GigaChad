@@ -44,7 +44,7 @@ public class EnemySpawner : MonoBehaviour
         pos *= (Random.Range(spawnMinimumDist,spawnMaximumDist));
         return pos;
     }
-    private void OnDrawGizmos() {
+    private void OnDrawGizmosSelected() {
         //Gizmos.color = new Color(1, 0, 0, 0.5f);
         Gizmos.DrawCube(transform.position, new Vector3(spawnMinimumDist,1,spawnMinimumDist));  
     }

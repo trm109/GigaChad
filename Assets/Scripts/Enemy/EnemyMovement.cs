@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,10 +11,13 @@ public class EnemyMovement : MonoBehaviour
     private float speed = 5f;
     private Vector3 movement;
     private Transform target;
+
+    private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
         target = GetComponent<GetTarget>().targetObj.transform;
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -25,7 +28,7 @@ public class EnemyMovement : MonoBehaviour
         //Apply Speed.
         movement *= speed * Time.deltaTime;
         //Apply to relative rotation.
-        transform.position += new Vector3(movement.x,0,movement.z);
+        rb.velocity = new Vector3(movement.x,0,movement.z);
     }
 
 }
