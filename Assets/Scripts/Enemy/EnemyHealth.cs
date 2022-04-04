@@ -39,6 +39,9 @@ public class EnemyHealth : MonoBehaviour
     {
         //do something, idk
         Debug.Log("Enemy Died");
+        //Increment player kills
+        GameObject pl = GetComponent<GetPlayer>().player;
+        pl.GetComponent<PlayerUpgrades>().kills++;
         Destroy(gameObject);
     }
 }
