@@ -6,6 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
     //Current weapon
     public float damage;
+    private float defaultDamage;
 
     public float range;
     
@@ -15,7 +16,7 @@ public class PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        defaultDamage = damage;
     }
 
     // Update is called once per frame
@@ -26,6 +27,43 @@ public class PlayerAttack : MonoBehaviour
         /*Debug.Log("Player Transform::::: " + transform.forward +
                     "\nPlayer Transform Normalized:::" + transform.forward.normalized);*/
     }
+    public void IncreasePower(int level){
+        Debug.Log("Increasing power to level:" + level);
+        switch (level){
+            case 1:
+                damage = defaultDamage * 1.1f;
+                //inc speed 10$
+                break;
+            case 2:
+                damage = defaultDamage * 1.2f;
+                break;
+            case 3:
+                damage = defaultDamage * 1.4f;
+                break;
+            case 4:
+                damage = defaultDamage * 1.6f;
+                break;
+            default:
+                Debug.Log("Bruh");
+                break;
+        }
+    }
+    /*
+    switch (level){
+            case 1:
+                damage = defaultDamage * 1.1f;
+                //inc speed 10$
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            default:
+                break;
+        }
+        */
     private void OnLeftClick(){
         if(Input.GetMouseButtonDown(0)){
             Debug.Log("Left Click");

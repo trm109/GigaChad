@@ -90,6 +90,7 @@ public class PlayerUpgrades : MonoBehaviour
                         if(kills >= upgradeCost[skillPower]){
                             kills -= upgradeCost[skillPower];
                             skillPower++;
+                            GetComponent<PlayerAttack>().IncreasePower(skillPower);
                             Debug.Log("Upgraded Power to level " + skillPower);
                         }
                     }
