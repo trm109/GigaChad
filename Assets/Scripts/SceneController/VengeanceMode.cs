@@ -16,6 +16,7 @@ public class VengeanceMode : MonoBehaviour
         }
     }
     public void StartVengeanceMode(){
+        Debug.Log("Vengeance Mode Activated");
         airship.SetActive(false);
         player.GetComponent<PlayerHealth>().SetInvulnerable();
     }
