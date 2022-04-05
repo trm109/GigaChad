@@ -11,20 +11,18 @@ public class EnemyHealth : MonoBehaviour
     //Private variables
     [SerializeField]
     private float health = 10.0f;
-    private float maxHealth;
+    private float maxHealth = 10.0f;
     [SerializeField]
     private Slider healthBar;
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = health;
-
-        healthBar.value = health / maxHealth;
+        IncreaseHealth(Time.realtimeSinceStartup / 240.0f);
     }
     //Can heal too.
     public void Damage(float dmg)
     {
-        Debug.Log("<<<Enemy Damaged");
+        //Debug.Log("<<<Enemy Damaged");
         health -= dmg;
         health = Mathf.Clamp(health, 0, maxHealth);
 
@@ -33,13 +31,13 @@ public class EnemyHealth : MonoBehaviour
         {
             Die();
         }
-        
     }
     public void IncreaseHealth(float percent){
         maxHealth *= percent + 1f;
         health = maxHealth;
+        healthBar.value = health / maxHealth;
     }
-    private void Die()
+    public void Die()
     {
         //do something, idk
         Debug.Log("Enemy Died");

@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46db452c60338a4a79d33a3f6c606ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 6
   range: 5
   angle: 0.5
 --- !u!114 &6407817524463143173
@@ -243,6 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19579935d6ce2544b02e4402c0c5c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeCost: 0a0000003200000064000000c8000000
   skillVengeance: 0
   skillRNG: 0
   skillHealth: 0
