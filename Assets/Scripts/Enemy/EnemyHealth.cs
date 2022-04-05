@@ -35,6 +35,10 @@ public class EnemyHealth : MonoBehaviour
         }
         
     }
+    public void IncreaseHealth(float percent){
+        maxHealth *= percent + 1f;
+        health = maxHealth;
+    }
     private void Die()
     {
         //do something, idk

@@ -36,8 +36,14 @@ public class EnemySpawner : MonoBehaviour
         //Instantiate a gameobject at the new position, and keep reference
         var newEnemy = Instantiate(enemyPrefab,spawnPosition, Quaternion.identity);
         //GameObject enemy = Instantiate();
+        AdjustStats(newEnemy);
         //Apply currentEnemyStrength
         //newEnemy.GetComponent<EnemyHealth>().
+    }
+    public void AdjustStats(GameObject enemy){
+        float gamePercentOver =Time.realtimeSinceStartup/ 240f;
+        enemy.GetComponent<EnemyAttack>().IncreaseAttack(gamePercentOver);
+        enemy.GetComponent<EnemyHealth>().IncreaseHealth(gamePercentOver);
     }
     public Vector3 RandomSpawnVector(){
         Vector3 pos = Quaternion.AngleAxis(Random.Range(0,359),Vector3.up) * transform.forward;

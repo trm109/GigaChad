@@ -16,7 +16,13 @@ public class GetTarget : MonoBehaviour
             playertarget = true; 
             targetObj = GameObject.FindGameObjectWithTag("Player");
         }else{
-            targetObj = GameObject.FindGameObjectWithTag("Airship");
+            if(targetObj.active){
+                targetObj = GameObject.FindGameObjectWithTag("Airship");
+            }else{
+                playertarget = true; 
+                targetObj = GameObject.FindGameObjectWithTag("Player");
+            }
         }
+        
     }
 }
