@@ -30,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
         }
     }
     public void SpawnEnemy(){
-        Debug.Log("Spawned Enemy");
+        //Debug.Log("Spawned Enemy");
         //Assign random position within spawn bounds.
         Vector3 spawnPosition = RandomSpawnVector();
         //Instantiate a gameobject at the new position, and keep reference
@@ -41,7 +41,7 @@ public class EnemySpawner : MonoBehaviour
         //newEnemy.GetComponent<EnemyHealth>().
     }
     public void AdjustStats(GameObject enemy){
-        float gamePercentOver =Time.realtimeSinceStartup/ 240f;
+        float gamePercentOver = Time.realtimeSinceStartup/ 240.0f;
         enemy.GetComponent<EnemyAttack>().IncreaseAttack(gamePercentOver);
         enemy.GetComponent<EnemyHealth>().IncreaseHealth(gamePercentOver);
     }

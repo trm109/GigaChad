@@ -14,6 +14,7 @@ public class EnemyAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        IncreaseAttack(Time.realtimeSinceStartup / 240.0f);
         if(GetComponent<GetTarget>().playertarget){
             target = GetComponent<GetPlayer>().player;
             //Debug.Log("Assigned target to Player");

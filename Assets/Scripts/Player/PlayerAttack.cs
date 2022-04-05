@@ -104,14 +104,14 @@ public class PlayerAttack : MonoBehaviour
     //
     //
     public bool IsHit(Vector2 a, Vector2 b){
-        Debug.Log("Vector A::" + a);
-        Debug.Log("Vector B::" + b);
-        Debug.Log("Is Hit, " + Vector2.Dot(a.normalized,b) + "\n"+
-                    " toEnemy = " + a.normalized +
-                    ", transform.position = " + b);
+        //Debug.Log("Vector A::" + a);
+        //Debug.Log("Vector B::" + b);
+        //Debug.Log("Is Hit, " + Vector2.Dot(a.normalized,b) + "\n"+
+        //            " toEnemy = " + a.normalized +
+        //            ", transform.position = " + b);
         //and in the proper angle
         if(Vector2.Dot(a.normalized,b.normalized) < angle){
-            Debug.Log("Enemy not in angle: " + Vector2.Dot(a.normalized,b.normalized) + " < " + angle);
+            //Debug.Log("Enemy not in angle: " + Vector2.Dot(a.normalized,b.normalized) + " < " + angle);
             return false;
         }
         //if it doesn't trigger the false checks, return true.
