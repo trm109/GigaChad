@@ -75,7 +75,6 @@ public class PlayerAttack : MonoBehaviour
     private void OnLeftClick(){
         if(Input.GetMouseButtonDown(0)){
             if(cooldown <= 0){
-                anim.ResetTrigger("ResetPunch");
                 anim.SetTrigger("ResetPunch");
                 Debug.Log("CCCC");
                 Debug.Log("Left Click");
@@ -86,6 +85,7 @@ public class PlayerAttack : MonoBehaviour
                 anim.SetTrigger("Punch"); 
                 isPunchLeft = !isPunchLeft;
                 cooldown = maxCooldown;
+                anim.ResetTrigger("ResetPunch");
             }
         }
     }
