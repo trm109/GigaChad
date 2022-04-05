@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private HealthBar healthBar;    //Reference to the health bar
 
-
+    private bool isInvincible = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +30,9 @@ public class PlayerHealth : MonoBehaviour
     }
     //Can heal too.
     public void Damage(float dmg){
+        if(isInvincible){
+            return;
+        }
         health -= dmg;
         health = Mathf.Clamp(health,0,maxHealth);
         if (health == 0){
@@ -42,6 +45,9 @@ public class PlayerHealth : MonoBehaviour
     public float GetHealth()
     {
         return health;
+    }
+    public void SetInvulnerable(){
+        isInvincible = true;
     }
     public void IncreaseMaxHealth(float newMax)
     {

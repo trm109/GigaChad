@@ -33,7 +33,9 @@ public class EnemyAttack : MonoBehaviour
             target.GetComponent<AirshipHealth>().Damage(damage);
         }
     }
-
+    public void IncreaseAttack(float percent){
+        damage *= 1f + percent;
+    }
     // Update is called once per frame
     void Update()
     {
