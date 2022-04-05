@@ -5,7 +5,7 @@ using UnityEngine;
 public class VengeanceMode : MonoBehaviour
 {
     [SerializeField]
-    private float vTime = 240.0f;
+    private float vTime = 60.0f;
     private GameObject player;
     private GameObject airship;
     private bool isVengeance = false;
