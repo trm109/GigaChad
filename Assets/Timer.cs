@@ -18,11 +18,12 @@ public class Timer : MonoBehaviour
  
     void displayTime (float t)
     {
-        timet.color = Color.white;
+        
         float minutes = Mathf.FloorToInt(t / 60);
         float seconds = Mathf.FloorToInt(t % 60);
         timet.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         if (minutes < 1) { timet.color = Color.red; }
+        else { timet.color = Color.white; }
     }
 
     // Update is called once per frame
