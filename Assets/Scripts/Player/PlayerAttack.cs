@@ -9,13 +9,18 @@ public class PlayerAttack : MonoBehaviour
     private float defaultDamage;
 
     public float range;
-    
+    private bool isPunchLeft = false;
     //1 = 0 deg, 0 = 90 deg, -1 = 180 deg.
     //.5f = 45deg (total of 90 degree area)
     public float angle = .5f; 
+    public Animator anim;
+
+    private float cooldown = 0.0f;
+    private float maxCooldown = .5f;
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         defaultDamage = damage;
     }
 
@@ -24,6 +29,9 @@ public class PlayerAttack : MonoBehaviour
     {
         OnLeftClick();
         OnRightClick();
+        if(cooldown > 0){
+            cooldown -= Time.deltaTime;
+        }
         /*Debug.Log("Player Transform::::: " + transform.forward +
                     "\nPlayer Transform Normalized:::" + transform.forward.normalized);*/
     }
@@ -66,9 +74,19 @@ public class PlayerAttack : MonoBehaviour
         */
     private void OnLeftClick(){
         if(Input.GetMouseButtonDown(0)){
-            Debug.Log("Left Click");
-            //Some Attack
-            Attack();
+            if(cooldown <= 0){
+                anim.ResetTrigger("ResetPunch");
+                anim.SetTrigger("ResetPunch");
+                Debug.Log("CCCC");
+                Debug.Log("Left Click");
+                //Some Attack
+                Attack();
+                anim.ResetTrigger("isLeftPunch");
+                anim.SetBool("isLeftPunch", isPunchLeft);
+                anim.SetTrigger("Punch"); 
+                isPunchLeft = !isPunchLeft;
+                cooldown = maxCooldown;
+            }
         }
     }
     private void OnRightClick(){

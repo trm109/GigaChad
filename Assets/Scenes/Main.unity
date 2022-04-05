@@ -949,6 +949,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1033313542260644710, guid: 2e9e11d743ff5d91c94bf738d5726fc6, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: f7f6d31978c876fed873af6aa3c044f5, type: 3}
+    - target: {fileID: 1033313542260644710, guid: 2e9e11d743ff5d91c94bf738d5726fc6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3748411590fb734c5aad3da7fdaacee7, type: 2}
     - target: {fileID: 8932700700750807649, guid: 2e9e11d743ff5d91c94bf738d5726fc6, type: 3}
       propertyPath: m_Name
       value: Player
