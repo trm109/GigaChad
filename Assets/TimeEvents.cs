@@ -24,6 +24,7 @@ public class TimeEvents : MonoBehaviour
         if(!isVengeanceMode){
             if(Time.realtimeSinceStartup >= defendTimeDuration){
                 //Switch to Vengeance Mode.
+                StartVengeanceMode();
                 //Change text to red.
                 timerUI.ChangeColor(Color.red);
             }else{
@@ -69,7 +70,6 @@ public class TimeEvents : MonoBehaviour
         EnemySpawner en = GetComponent<EnemySpawner>();
         en.SetSpawnRate(0.5f);
         GetTarget.isVengeanceMode = true;
-
     }
     public void AlterUI(){
         
