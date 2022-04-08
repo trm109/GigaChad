@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    private List<GameObject> enemies = new List<GameObject>();
     public GameObject enemyPrefab;
     public float currentEnemyStrength = 1.0f;
     private float spawnMinimumDist = 50.0f;
@@ -39,6 +40,7 @@ public class EnemySpawner : MonoBehaviour
         AdjustStats(newEnemy);
         //Apply currentEnemyStrength
         //newEnemy.GetComponent<EnemyHealth>().
+        enemies.Add(newEnemy);
     }
     public void AdjustStats(GameObject enemy){
         float gamePercentOver = Time.realtimeSinceStartup/ 240.0f;
@@ -50,8 +52,12 @@ public class EnemySpawner : MonoBehaviour
         pos *= (Random.Range(spawnMinimumDist,spawnMaximumDist));
         return pos;
     }
-    private void OnDrawGizmosSelected() {
-        //Gizmos.color = new Color(1, 0, 0, 0.5f);
-        Gizmos.DrawCube(transform.position, new Vector3(spawnMinimumDist,1,spawnMinimumDist));  
+    public void SetSpawnRate(float spawnTimer){
+        spawnMaxCD = spawnTimer;
+    }
+    public void ClearEnemies(){
+        foreach(GameObject enemy in enemies){
+            Destroy(enemy);
+        }
     }
 }

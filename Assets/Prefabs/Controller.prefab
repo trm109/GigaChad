@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3648826274815008279}
   - component: {fileID: 954392854601800629}
-  - component: {fileID: 8429926245475621706}
   - component: {fileID: 7768556884346942437}
   - component: {fileID: 2460706088885555658}
+  - component: {fileID: 7961091148401698385}
   m_Layer: 0
   m_Name: Controller
   m_TagString: GameController
@@ -48,18 +48,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 448147443897463570, guid: ee2edc52f4a8c846f8ee3e6c1b28f3a1, type: 3}
   currentEnemyStrength: 1
---- !u!114 &8429926245475621706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3648826274815008276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d115cdb441cf63cdae040e78d4465a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7768556884346942437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,3 +74,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   airship: {fileID: 0}
+--- !u!114 &7961091148401698385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3648826274815008276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7570c03c4d6b829a79c2eb62d16bebfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerUI: {fileID: 0}

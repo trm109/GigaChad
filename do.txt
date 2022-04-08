@@ -1,15 +1,1 @@
-Scripts:
-    Win/Lose conditions
-    Improve AI:
-        No overlapping,
-        Pacman like movement variance.
-        Targeting based on distance?
-    Player attack effects (Procedural/Scriptable?)
-    Add Enemy HealthBars
-    //Fix 0 degree bug
-Art:
-    Basic outline of map
-    concept art?
-    Some implemented character assets.
-Music:
-    no
+Swap "Get" scripts to statics.

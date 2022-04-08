@@ -41,4 +41,8 @@ public class AirshipHealth : MonoBehaviour
         //Prevent UI Interaction (upgrades)
 
     }
+    public void Disable(){
+        //
+        gameObject.SetActive(false);
+    }
 }
