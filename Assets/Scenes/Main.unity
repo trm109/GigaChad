@@ -959,7 +959,7 @@ PrefabInstance:
       propertyPath: timerUI
       value: 
       objectReference: {fileID: 835072691}
-    - target: {fileID: 8429926245475621706, guid: d5fb736461b8af853adbd503a7c09fb2, type: 3}
+    - target: {fileID: 0}
       propertyPath: vTime
       value: 60
       objectReference: {fileID: 0}
