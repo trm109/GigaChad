@@ -5,9 +5,12 @@ using UnityEditor;
 public class PlayerAttack : MonoBehaviour
 {
     //Current weapon
-    public float damage;
-    private float defaultDamage;
-
+    private static float damage;
+    private static float defaultDamage = 6.0f;
+    public static float powerMult = 1.0f;
+    public static float vengeancePowerMult = 1.0f;
+    public static float speedMult = 1.0f;
+    public static float vengeanceSpeedMult = 1.0f;
     public float range;
     private bool isPunchLeft = false;
     //1 = 0 deg, 0 = 90 deg, -1 = 180 deg.
@@ -15,13 +18,15 @@ public class PlayerAttack : MonoBehaviour
     public float angle = .5f; 
     public Animator anim;
 
-    private float cooldown = 0.0f;
-    private float maxCooldown = .25f;
+    private static float cooldown = 0.0f;
+    private static float defaultMaxCooldown = .25f;
+    private static float maxCooldown;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        defaultDamage = damage;
+        damage = defaultDamage;
+        maxCooldown = defaultMaxCooldown;
     }
 
     // Update is called once per frame
@@ -35,51 +40,19 @@ public class PlayerAttack : MonoBehaviour
         /*Debug.Log("Player Transform::::: " + transform.forward +
                     "\nPlayer Transform Normalized:::" + transform.forward.normalized);*/
     }
-    public void IncreasePower(int level){
-        Debug.Log("Increasing power to level:" + level);
-        switch (level){
-            case 1:
-                damage = defaultDamage * 1.1f;
-                //inc speed 10$
-                break;
-            case 2:
-                damage = defaultDamage * 1.2f;
-                break;
-            case 3:
-                damage = defaultDamage * 1.4f;
-                break;
-            case 4:
-                damage = defaultDamage * 1.6f;
-                break;
-            default:
-                Debug.Log("Bruh");
-                break;
+    public static void CalculateDamage(){
+        if(!TimeEvents.isVengeanceMode){
+            damage = defaultDamage * powerMult;
+            maxCooldown = defaultMaxCooldown * speedMult;
+        }else{
+            damage = defaultDamage * powerMult * vengeancePowerMult;
+            maxCooldown = defaultMaxCooldown * speedMult * vengeanceSpeedMult;
         }
     }
-    /*
-    switch (level){
-            case 1:
-                damage = defaultDamage * 1.1f;
-                //inc speed 10$
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            default:
-                break;
-        }
-        */
     private void OnLeftClick(){
         if(cooldown <= 0){
             if(Input.GetMouseButton(0)){
-                
                 anim.SetTrigger("ResetPunch");
-                //Debug.Log("CCCC");
-                //Debug.Log("Left Click");
-                //Some Attack
                 Attack();
                 anim.ResetTrigger("isLeftPunch");
                 anim.SetBool("isLeftPunch", isPunchLeft);
