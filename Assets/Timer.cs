@@ -5,41 +5,18 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public float timeRemaining;
-    private bool isrunning;
-    [SerializeField] Text timet;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        timeRemaining = 120f;
-        isrunning = true;
+    private Text txt;
+    private void Start() {
+        txt = GetComponent<Text>();
     }
- 
-    void displayTime (float t)
-    {
-        
-        float minutes = Mathf.FloorToInt(t / 60);
-        float seconds = Mathf.FloorToInt(t % 60);
-        timet.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-        if (minutes < 1) { timet.color = Color.red; }
-        else { timet.color = Color.white; }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (isrunning) {
-            if (timeRemaining > 0f)
-            {
-                timeRemaining -= Time.deltaTime;
-            }
-            else
-            {
-                timeRemaining = 0f;
-                isrunning = false; }
-
-            displayTime(timeRemaining);
+    public void UpdateText(float time){
+        if(txt == null){
+            Debug.LogWarning("Text asset not assigned");
+            return;
         }
+        txt.text = time.ToString();
+    }
+    public void ChangeColor(Color c){
+        txt.color = c;
     }
 }

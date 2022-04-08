@@ -238,6 +238,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &835072691 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1570730084381833217, guid: 4aef9e727fa55f6258c3a9d667c774a9, type: 3}
+  m_PrefabInstance: {fileID: 2555427498703214472}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2470ff871a3dae64cb0f51e90749045d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,6 +890,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 379338498}
+    - target: {fileID: 9159628198963951857, guid: 4aef9e727fa55f6258c3a9d667c774a9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -15.55069
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4aef9e727fa55f6258c3a9d667c774a9, type: 3}
 --- !u!1001 &3648826275708685101
@@ -940,6 +955,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7961091148401698385, guid: d5fb736461b8af853adbd503a7c09fb2, type: 3}
+      propertyPath: timerUI
+      value: 
+      objectReference: {fileID: 835072691}
     - target: {fileID: 8429926245475621706, guid: d5fb736461b8af853adbd503a7c09fb2, type: 3}
       propertyPath: vTime
       value: 60

@@ -16,7 +16,7 @@ public class PlayerAttack : MonoBehaviour
     public Animator anim;
 
     private float cooldown = 0.0f;
-    private float maxCooldown = .5f;
+    private float maxCooldown = .25f;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,11 +73,12 @@ public class PlayerAttack : MonoBehaviour
         }
         */
     private void OnLeftClick(){
-        if(Input.GetMouseButtonDown(0)){
-            if(cooldown <= 0){
+        if(cooldown <= 0){
+            if(Input.GetMouseButton(0)){
+                
                 anim.SetTrigger("ResetPunch");
-                Debug.Log("CCCC");
-                Debug.Log("Left Click");
+                //Debug.Log("CCCC");
+                //Debug.Log("Left Click");
                 //Some Attack
                 Attack();
                 anim.ResetTrigger("isLeftPunch");
