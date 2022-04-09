@@ -14,6 +14,10 @@ public class EnemyHealth : MonoBehaviour
     private float maxHealth = 10.0f;
     [SerializeField]
     private Slider healthBar;
+    private GameObject item;
+    private GameObject itemInstance;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +46,15 @@ public class EnemyHealth : MonoBehaviour
         //do something, idk
         //Debug.Log("Enemy Died");
         //Increment player kills
+        
+        item = EnemyDrop.Drop();
+
+        if (item != null)
+        {
+            itemInstance = Instantiate(item, this.position);
+            itemInstance.SetActive(true);
+        }
+
         GameObject pl = GetComponent<GetPlayer>().player;
         pl.GetComponent<PlayerUpgrades>().kills++;
         Destroy(gameObject);
