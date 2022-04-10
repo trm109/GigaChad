@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class EnemyDrop : MonoBehaviour
+public class EnemyDrop : MonoBehaviour
 {
     public static float dropchance = 0.8f;     //chance of drop
     public static float weaponchance = 3f;     //chance of drop being weapon given drop
@@ -34,7 +34,7 @@ public static class EnemyDrop : MonoBehaviour
     [SerializeField] static GameObject blackhole;
 
 
-    public GameObject Drop()
+    public static GameObject Drop()
     {
         float willdrop = Random.Range(0, 10);   //for whether there will be a drop
         float droptype = Random.Range(0, 10);   //for whether drop will be an item or weapon
