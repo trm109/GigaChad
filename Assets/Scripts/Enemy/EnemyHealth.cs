@@ -51,7 +51,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (item != null)
         {
-            itemInstance = Instantiate(item, this.transform.position);
+            itemInstance = Instantiate(item, this.transform);
             itemInstance.SetActive(true);
         }
 

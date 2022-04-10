@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44658822, g: 0.49642307, b: 0.5748253, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8031478419761693356, guid: 2e9e11d743ff5d91c94bf738d5726fc6, type: 3}
   m_PrefabInstance: {fileID: 8932700701498352262}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1429846699}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b19579935d6ce2544b02e4402c0c5c71, type: 3}
@@ -522,6 +522,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1429846699 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8932700700750807649, guid: 2e9e11d743ff5d91c94bf738d5726fc6, type: 3}
+  m_PrefabInstance: {fileID: 8932700701498352262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1429846700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429846699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3c6b2a86d4a8e41a5f742a57be9ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponsInRange: []
+  weapon: {fileID: 0}
+  currentWeapon: {fileID: 0}
+  emptyHands: {fileID: 0}
+--- !u!1 &1474347844 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 448147443897463570, guid: ee2edc52f4a8c846f8ee3e6c1b28f3a1, type: 3}
+  m_PrefabInstance: {fileID: 448147442550642532}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1474347845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474347844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84d5e7440e8c6d3488f42a8e2835962a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2045114768 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6678480621579318249, guid: 4aef9e727fa55f6258c3a9d667c774a9, type: 3}
