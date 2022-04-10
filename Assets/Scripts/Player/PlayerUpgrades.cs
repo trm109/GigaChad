@@ -11,24 +11,33 @@ public class PlayerUpgrades : MonoBehaviour
         Power
     }
     public int[] upgradeCost = new int[]{10,50,100,200};
-    public int skillVengeance;
-    public int skillRNG;
-    public int skillHealth;
-    public int skillPower;
 
-    public int kills;
+    //Vengeance Upgrade tiers.
+    public float[] vengeanceTimeTiers = new float[]{45.0f,60.0f,75.0f,90.0f};
+    public float[] vengeancePowerTiers = new float[]{1.2f,1.4f ,1.8f ,2.5f};
+    //RNG Upgrade tiers.
+    public float[] rngDropTiers = new float[]{1.03f,1.05f,1.1f ,1.2f};
+    public float[] rngMidTiers =  new float[]{1.1f,1.15f ,1.25f,1.75f};
+    public float[] rngHighTiers = new float[]{1.0f,1.075f,1.15f,1.25f};
+
+    //Health upgrade tiers.
+    public float[] healthTiers = new float[]{1.08f,1.2f,1.36f,1.56f};
+    //Power upgrade tiers.
+    public float[] powerDamageTiers = new float[]{1.1f, 1.2f,1.4f,1.6f};
+    public float[] powerSpeedTiers =  new float[]{0.9f,0.85f,0.8f,0.6f};
+    public int skillVengeance = 0;
+    public int skillRNG = 0;
+    public int skillHealth = 0;
+    public int skillPower = 0;
+
+    public int kills = 0;
 
     private const int SKILLCAP = 4;
 
     // Start is called before the first frame update
     void Start()
     {
-        skillVengeance = 0;
-        skillRNG = 0;
-        skillHealth = 0;
-        skillPower = 0;
-
-        kills = 0;
+    
     }
     private void Update() {
         if(Input.GetKeyDown(KeyCode.Alpha1)){
@@ -90,7 +99,7 @@ public class PlayerUpgrades : MonoBehaviour
                         if(kills >= upgradeCost[skillPower]){
                             kills -= upgradeCost[skillPower];
                             skillPower++;
-                            GetComponent<PlayerAttack>().IncreasePower(skillPower);
+                            
                             Debug.Log("Upgraded Power to level " + skillPower);
                         }
                     }
@@ -105,7 +114,25 @@ public class PlayerUpgrades : MonoBehaviour
     {
         return kills;
     }
+    public void UpgradeVengeance(int tier){
+        //GetComponent<PlayerAttack>().
+        PlayerAttack.vengeancePowerMult = vengeancePowerTiers[tier];
+        PlayerAttack.vengeanceSpeedMult = 1.0f;
+        PlayerAttack.CalculateDamage();
+    }
+    public void UpgradeRNG(int tier){
 
+    }
+    public void UpgradeHealth(int tier){
+        PlayerHealth.healthMult = healthTiers[tier];
+        PlayerHealth.CalculateHealth();
+    }
+    public void UpgradePower(int tier){
+        PlayerAttack.powerMult = powerDamageTiers[tier];
+        PlayerAttack.speedMult = powerSpeedTiers[tier];
+        PlayerAttack.CalculateDamage();
+    }
+    
     public int GetCurrentLevel(UpgradeSkill upgradeSkill)
     {
         switch (upgradeSkill)

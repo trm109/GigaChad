@@ -8,19 +8,21 @@ public class PlayerHealth : MonoBehaviour
 
     //Private variables
     [SerializeField]
-    private float health = 10.0f;
-    private float maxHealth;
-
+    private static float health;
+    private static  float maxHealth;
+    private static float defaultMaxHealth = 10.0f;
+    public static float healthMult = 1.0f;
     
     [SerializeField]
     private HealthBar healthBar;    //Reference to the health bar
 
-    private bool isInvincible = false;
+    private static bool isInvincible = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = health;
+        maxHealth = defaultMaxHealth;
+        health = defaultMaxHealth;
         healthBar.InitializeHealth(maxHealth);
     }
     void Update()
@@ -49,9 +51,9 @@ public class PlayerHealth : MonoBehaviour
     public void SetInvulnerable(){
         isInvincible = true;
     }
-    public void IncreaseMaxHealth(float newMax)
+    public static void CalculateHealth()
     {
-        maxHealth = newMax;
+        maxHealth = defaultMaxHealth * healthMult;
         //for the time being, health will also just be set to the max health upon increase
         health = maxHealth;
     }

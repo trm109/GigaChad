@@ -8,8 +8,8 @@ public class TimeEvents : MonoBehaviour
 {
     [SerializeField] 
     private const float defendTimeDuration = 60.0f; // update to 4 minutes for actual gameplay.
-    private float vengeanceModeDuration = 30.0f; //Variable, changes.
-    private bool isVengeanceMode = false;
+    private static float vengeanceModeDuration = 30.0f; //Variable, changes.
+    public static bool isVengeanceMode = false;
 
     [SerializeField] private Timer timerUI;
     // Start is called before the first frame update
@@ -46,6 +46,9 @@ public class TimeEvents : MonoBehaviour
     //Remove airship.
     //Increase enemy spawns.
     //Alter UI.
+    public void SetVengeanceTime(float t){
+        vengeanceModeDuration = t;
+    }
     public void StartVengeanceMode(){
         isVengeanceMode = true;
         ClearEnemies();
