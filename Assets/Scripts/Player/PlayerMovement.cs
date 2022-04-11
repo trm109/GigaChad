@@ -11,10 +11,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
     private float HorizontalInput;
     private float VerticalInput;
+    private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -28,6 +29,6 @@ public class PlayerMovement : MonoBehaviour
         //Apply Speed.
         movement *= speed * Time.deltaTime;
         //Apply to relative rotation.
-        transform.position += new Vector3(movement.x,0,movement.y);
+        rb.velocity = new Vector3(movement.x,0,movement.y);
     }
 }
