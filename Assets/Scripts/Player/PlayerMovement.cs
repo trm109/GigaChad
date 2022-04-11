@@ -28,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
         movement = new Vector2(HorizontalInput, VerticalInput).normalized;
         //Apply Speed.
         movement *= speed * Time.deltaTime;
+        if((VerticalInput == 0) & (HorizontalInput==0)){
+            movement = Vector2.zero;
+        }
         //Apply to relative rotation.
         rb.velocity = new Vector3(movement.x,0,movement.y);
     }
