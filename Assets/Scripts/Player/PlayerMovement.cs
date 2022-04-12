@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         //Get input
         HorizontalInput = Input.GetAxis("Horizontal");
         VerticalInput = Input.GetAxis("Vertical");
-        Debug.Log("Vertical Input: " + VerticalInput + " Horizontal Input: " + HorizontalInput );
+        //Debug.Log("Vertical Input: " + VerticalInput + " Horizontal Input: " + HorizontalInput );
         //Combine and normalize.
         movement = new Vector2(HorizontalInput, VerticalInput).normalized;
         //Apply Speed.
