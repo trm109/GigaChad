@@ -36,12 +36,18 @@ public class PlayerHealth : MonoBehaviour
         
     }
 
+    public void down(bool b)
+    {
+        isdown = b;
+        GetComponent<PlayerAttack>().setDown(b);
+        GetComponent<PlayerLook>().setDown(b);
+    }
+
     void Update()
     {
 
         if (health == 0 && isdown == false) {
-            isdown = true;
-            GetComponent<PlayerAttack>().setDown(true);
+            down(true);
             nDown += 1;
             currentSpeed = GetComponent<PlayerMovement>().getSpeed();
             GetComponent<PlayerMovement>().setSpeed(0);
@@ -54,8 +60,7 @@ public class PlayerHealth : MonoBehaviour
         }
 
         if (timer < 0) {
-            isdown = false;
-            GetComponent<PlayerAttack>().setDown(false);
+            down(false);
             health = maxHealth;
             GetComponent<PlayerMovement>().setSpeed(currentSpeed);
             if (nDown < 2) { timer = 5f; }
