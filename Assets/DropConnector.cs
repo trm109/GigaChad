@@ -9,6 +9,10 @@ public class DropConnector : MonoBehaviour
     public GameObject morningstarCO;
     public GameObject axeCO;
 
+    /*
+    public GameObject healthCO;
+    public GameObject multiplyCO;*/
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +20,9 @@ public class DropConnector : MonoBehaviour
         EnemyDrop.sword = swordCO;
         EnemyDrop.morningstar = morningstarCO;
         EnemyDrop.axe = axeCO;
+
+        /*EnemyDrop.health = healthCO;
+        EnemyDrop.multiply = multiplyCO;*/
     }
 
 }

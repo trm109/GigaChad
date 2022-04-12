@@ -20,18 +20,12 @@ public class EnemyDrop : MonoBehaviour
     public static GameObject axe;
 
     // item probabilities
-    private static float survivorresC = 2.25f;
-    private static float healthC = 3.5f;
-    private static float invincC = 1.0f;
-    private static float multiplyC = 2.25f;
-    private static float blackholeC = 1.0f;
-
+    private static float healthC = 7.5f;
+    private static float multiplyC = 2.5f;
+    
     //item fields
-    public static GameObject survivorres;
     public static GameObject health;
-    public static GameObject invinc;
     public static GameObject multiply;
-    public static GameObject blackhole;
 
 
     public static GameObject Drop()
@@ -53,11 +47,8 @@ public class EnemyDrop : MonoBehaviour
             //}
             /*else                                //drop will be an item
             {
-                if (drop < survivorresC) { return survivorres; }
-                else if (drop < survivorresC + healthC) { return health; }
-                else if (drop < survivorresC + healthC + invincC) { return invinc; }
-                else if (drop < survivorresC + healthC + invincC + multiplyC) { return multiply; }
-                else { return blackhole; }
+                if (drop < healthC) { return health; }
+                else { return multiply; }
             }*/
         }
         else { return null; }
