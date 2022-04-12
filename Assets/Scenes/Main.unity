@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44658822, g: 0.49642307, b: 0.5748253, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2629,6 +2629,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 954392854601800629, guid: d5fb736461b8af853adbd503a7c09fb2, type: 3}
+      propertyPath: enemyPrefabFast
+      value: 
+      objectReference: {fileID: 628843692248507894, guid: 59e0462052657234e907132d35cf4d71, type: 3}
+    - target: {fileID: 954392854601800629, guid: d5fb736461b8af853adbd503a7c09fb2, type: 3}
+      propertyPath: enemyPrefabSlow
+      value: 
+      objectReference: {fileID: 2335949945620930964, guid: d9eeed9ad4c9ae34c9a99b0a39a9840f, type: 3}
     - target: {fileID: 3648826274815008276, guid: d5fb736461b8af853adbd503a7c09fb2, type: 3}
       propertyPath: m_Name
       value: Controller
