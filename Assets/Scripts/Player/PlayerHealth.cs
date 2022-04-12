@@ -10,7 +10,11 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private float health = 10.0f;
     private float maxHealth;
-
+    private bool isdown;            //boolean for if player is down or not
+    private float timer;            //timer to keep track of how long player has been down
+    private int nDown;              //counter to keep track of how many times player has gone down
+    private float currentSpeed;
+    public GameObject model;
     
     [SerializeField]
     private HealthBar healthBar;    //Reference to the health bar
@@ -20,13 +24,44 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        nDown = 0;
+        timer = 3f;
+        isdown = false;
+        currentSpeed = GetComponent<PlayerMovement>().getSpeed();
         maxHealth = health;
         healthBar.InitializeHealth(maxHealth);
+        
     }
+
     void Update()
     {
-        //continuously update health bar for the player
-        healthBar.SetValue(health);
+
+        if (health == 0 && isdown == false) {
+            isdown = true;
+            GetComponent<PlayerAttack>().setDown(true);
+            nDown += 1;
+            currentSpeed = GetComponent<PlayerMovement>().getSpeed();
+            GetComponent<PlayerMovement>().setSpeed(0);
+            model.transform.Rotate(90.0f, 0f, 0f);
+
+        }
+
+        if (isdown) {
+            timer -= Time.deltaTime;
+        }
+
+        if (timer < 0) {
+            isdown = false;
+            GetComponent<PlayerAttack>().setDown(false);
+            health = maxHealth;
+            GetComponent<PlayerMovement>().setSpeed(currentSpeed);
+            if (nDown < 2) { timer = 5f; }
+            else { timer = 10f; }
+            model.transform.Rotate(-90.0f, 0f, 0f);
+        }
+        
+        healthBar.SetValue(health);         //continuously update health bar for the player
     }
     //Can heal too.
     public void Damage(float dmg){

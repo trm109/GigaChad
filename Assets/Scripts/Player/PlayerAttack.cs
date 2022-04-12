@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEditor;
 public class PlayerAttack : MonoBehaviour
 {
+    private bool isdown;       //bool for keeping track of whether player is down
+    public void setDown(bool n) { isdown = n; }
+    //public bool getDown() { return isdown; }
+
+
     //Current weapon
     public float damage;
     private float defaultDamage;
@@ -20,6 +25,7 @@ public class PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isdown = false;
         anim = GetComponent<Animator>();
         defaultDamage = damage;
     }
@@ -73,7 +79,7 @@ public class PlayerAttack : MonoBehaviour
         }
         */
     private void OnLeftClick(){
-        if(cooldown <= 0){
+        if(cooldown <= 0 && !isdown){
             if(Input.GetMouseButton(0)){
                 
                 anim.SetTrigger("ResetPunch");

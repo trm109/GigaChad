@@ -18,6 +18,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
+
+    public void setSpeed(float n) { speed = n; }
+
+    public float getSpeed() { return speed; }
+
     void Update()
     {
         //Get input
