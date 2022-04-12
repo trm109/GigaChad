@@ -8,13 +8,15 @@ public class PlayerHealth : MonoBehaviour
 
     //Private variables
     [SerializeField]
-    private float health = 10.0f;
-    private float maxHealth;
+    private static float health = 10.0f;
+    public static float healthMult = 1.0f;
+    private static float maxHealth;
     private bool isdown;            //boolean for if player is down or not
     private float timer;            //timer to keep track of how long player has been down
     private int nDown;              //counter to keep track of how many times player has gone down
     private float currentSpeed;
     public GameObject model;
+    public static float defaultMaxHealth = 10.0f;
     
     [SerializeField]
     private HealthBar healthBar;    //Reference to the health bar
