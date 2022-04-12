@@ -19,7 +19,7 @@ public class PlayerAttack : MonoBehaviour
     public static float vengeanceSpeedMult = 1.0f;
     public static float range;
     private bool isPunchLeft = false;
-    //1 = 0 deg, 0 = 90 deg, -1 = 180 deg.
+    //1 = 0 deg, 0 = 180 deg, -1 = 360 deg.
     //.5f = 45deg (total of 90 degree area)
     public static float angle = .5f; 
     public Animator anim;
@@ -27,6 +27,7 @@ public class PlayerAttack : MonoBehaviour
     private static float cooldown = 0.0f;
     private static float defaultMaxCooldown = .25f;
     private static float maxCooldown;
+    AttackAnimationHandler attackAnimHandler;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,8 @@ public class PlayerAttack : MonoBehaviour
         anim = GetComponent<Animator>();
         damage = defaultDamage;
         maxCooldown = defaultMaxCooldown;
+        attackAnimHandler = GetComponent<AttackAnimationHandler>();
+        attackAnimHandler.SetSwingAngle(angle);
     }
 
     // Update is called once per frame
@@ -67,6 +70,7 @@ public class PlayerAttack : MonoBehaviour
                 isPunchLeft = !isPunchLeft;
                 cooldown = maxCooldown;
                 anim.ResetTrigger("ResetPunch");
+                attackAnimHandler.Swing();
             }
         }
     }

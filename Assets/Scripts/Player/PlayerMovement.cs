@@ -26,15 +26,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+
+        transform.position = new Vector3(transform.position.x,0,transform.position.z);
         //Get input
         HorizontalInput = Input.GetAxis("Horizontal");
         VerticalInput = Input.GetAxis("Vertical");
+        Debug.Log("Vertical Input: " + VerticalInput + " Horizontal Input: " + HorizontalInput );
         //Combine and normalize.
         movement = new Vector2(HorizontalInput, VerticalInput).normalized;
         //Apply Speed.
         movement *= speed * Time.deltaTime;
         if((VerticalInput == 0) & (HorizontalInput==0)){
-            movement = Vector2.zero;
+            rb.velocity = Vector3.zero;
         }
         //Apply to relative rotation.
         rb.velocity = new Vector3(movement.x,0,movement.y);

@@ -6,7 +6,7 @@ public class PlayerWeapons : MonoBehaviour
 {
     //Current Weapon
     [SerializeField]
-    private Weapon currentWeapon = new Weapon();
+    public Weapon currentWeapon = new Weapon();
     [SerializeField]
     private List<Weapon> nearbyWeapons = new List<Weapon>();
     public WeaponIconManager wim;
@@ -25,7 +25,9 @@ public class PlayerWeapons : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E)){
             if(nearbyWeapons.Count > 0){
                 currentWeapon = nearbyWeapons[0].Pickup();
-                nearbyWeapons[0].DestroyThis();
+                var temp = nearbyWeapons[0];
+                nearbyWeapons.Remove(temp);
+                temp.DestroyThis();
                 UpdatePlayerStats();
                 UpdateIcon();
             }

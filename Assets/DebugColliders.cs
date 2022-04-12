@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spin : MonoBehaviour
+public class DebugColliders : MonoBehaviour
 {
-    
-    public float speed = 90.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +13,9 @@ public class Spin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0,speed*Time.deltaTime,0);
+        
+    }
+    private void OnCollisionStay(Collision other) {
+        Debug.Log("COLLIDING WITH " + other.gameObject.name);
     }
 }
