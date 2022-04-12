@@ -4,37 +4,37 @@ using UnityEngine;
 
 public class EnemyDrop : MonoBehaviour
 {
-    public float dropchance = 0.8f;     //chance of drop
-    public float weaponchance = 3f;     //chance of drop being weapon given drop
+    public static float dropchance = 0.8f;     //chance of drop
+    public static float weaponchance = 3f;     //chance of drop being weapon given drop
 
     // weapon probabilities
-    private float brassknucklesC = 3.5f;
-    private float swordC = 1.5f;
-    private float morningstarC = 1.5f;
-    private float axeC = 3.5f;
+    private static float brassknucklesC = 3.5f;
+    private static float swordC = 1.5f;
+    private static float morningstarC = 1.5f;
+    private static float axeC = 3.5f;
 
     // weapon fields
-    [SerializeField] GameObject brassknuckles;
-    [SerializeField] GameObject sword;
-    [SerializeField] GameObject morningstar;
-    [SerializeField] GameObject axe;
+    [SerializeField] static GameObject brassknuckles;
+    [SerializeField] static GameObject sword;
+    [SerializeField] static GameObject morningstar;
+    [SerializeField] static GameObject axe;
 
     // item probabilities
-    private float survivorresC = 2.25f;
-    private float healthC = 3.5f;
-    private float invincC = 1.0f;
-    private float multiplyC = 2.25f;
-    private float blackholeC = 1.0f;
+    private static float survivorresC = 2.25f;
+    private static float healthC = 3.5f;
+    private static float invincC = 1.0f;
+    private static float multiplyC = 2.25f;
+    private static float blackholeC = 1.0f;
 
     //item fields
-    [SerializeField] GameObject survivorres;
-    [SerializeField] GameObject health;
-    [SerializeField] GameObject invinc;
-    [SerializeField] GameObject multiply;
-    [SerializeField] GameObject blackhole;
+    [SerializeField] static GameObject survivorres;
+    [SerializeField] static GameObject health;
+    [SerializeField] static GameObject invinc;
+    [SerializeField] static GameObject multiply;
+    [SerializeField] static GameObject blackhole;
 
 
-    public GameObject Drop()
+    public static GameObject Drop()
     {
         float willdrop = Random.Range(0, 10);   //for whether there will be a drop
         float droptype = Random.Range(0, 10);   //for whether drop will be an item or weapon

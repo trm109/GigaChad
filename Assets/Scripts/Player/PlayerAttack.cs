@@ -5,17 +5,18 @@ using UnityEditor;
 public class PlayerAttack : MonoBehaviour
 {
     //Current weapon
+    [SerializeField]
     private static float damage;
     private static float defaultDamage = 6.0f;
     public static float powerMult = 1.0f;
     public static float vengeancePowerMult = 1.0f;
     public static float speedMult = 1.0f;
     public static float vengeanceSpeedMult = 1.0f;
-    public float range;
+    public static float range;
     private bool isPunchLeft = false;
     //1 = 0 deg, 0 = 90 deg, -1 = 180 deg.
     //.5f = 45deg (total of 90 degree area)
-    public float angle = .5f; 
+    public static float angle = .5f; 
     public Animator anim;
 
     private static float cooldown = 0.0f;
@@ -108,5 +109,12 @@ public class PlayerAttack : MonoBehaviour
         }
         //if it doesn't trigger the false checks, return true.
         return true;
+    }
+    public static void ChangeWeapon(float newDamage, float newRange, float newAOE, float newAttackSpeed){
+        defaultDamage = newDamage;
+        range = newRange;
+        angle = newAOE;
+        maxCooldown = newAttackSpeed;
+        CalculateDamage();
     }
 }
