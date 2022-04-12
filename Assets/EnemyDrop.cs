@@ -14,10 +14,10 @@ public class EnemyDrop : MonoBehaviour
     private static float axeC = 3.5f;
 
     // weapon fields
-    [SerializeField] static GameObject brassknuckles;
-    [SerializeField] static GameObject sword;
-    [SerializeField] static GameObject morningstar;
-    [SerializeField] static GameObject axe;
+    public static GameObject brassknuckles;
+    public static GameObject sword;
+    public static GameObject morningstar;
+    public static GameObject axe;
 
     // item probabilities
     private static float survivorresC = 2.25f;
@@ -27,11 +27,11 @@ public class EnemyDrop : MonoBehaviour
     private static float blackholeC = 1.0f;
 
     //item fields
-    [SerializeField] static GameObject survivorres;
-    [SerializeField] static GameObject health;
-    [SerializeField] static GameObject invinc;
-    [SerializeField] static GameObject multiply;
-    [SerializeField] static GameObject blackhole;
+    public static GameObject survivorres;
+    public static GameObject health;
+    public static GameObject invinc;
+    public static GameObject multiply;
+    public static GameObject blackhole;
 
 
     public static GameObject Drop()
@@ -43,22 +43,22 @@ public class EnemyDrop : MonoBehaviour
 
         if (willdrop < dropchance)
         {
-            if (droptype < weaponchance)        //drop will be a weapon
-            {
+            //if (droptype < weaponchance)        //drop will be a weapon
+            //{
                 if (drop < brassknucklesC) { return brassknuckles; }
                 else if (drop < brassknucklesC + swordC) { return sword; }
                 else if (drop < brassknucklesC + swordC + morningstarC) { return morningstar; }
                 else { return axe; }
 
-            }
-            else                                //drop will be an item
+            //}
+            /*else                                //drop will be an item
             {
                 if (drop < survivorresC) { return survivorres; }
                 else if (drop < survivorresC + healthC) { return health; }
                 else if (drop < survivorresC + healthC + invincC) { return invinc; }
                 else if (drop < survivorresC + healthC + invincC + multiplyC) { return multiply; }
                 else { return blackhole; }
-            }
+            }*/
         }
         else { return null; }
 
