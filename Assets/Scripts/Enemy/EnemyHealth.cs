@@ -47,16 +47,20 @@ public class EnemyHealth : MonoBehaviour
         //Debug.Log("Enemy Died");
         //Increment player kills
         
-        item = EnemyDrop.Drop();
-
-        if (item != null)
-        {
-            itemInstance = Instantiate(item, this.transform);
-            itemInstance.SetActive(true);
-        }
-
+        DropItem();    
         GameObject pl = GetComponent<GetPlayer>().player;
         pl.GetComponent<PlayerUpgrades>().kills++;
         Destroy(gameObject);
     }
+    //Implement RNG upgrades.
+    //
+    public void DropItem(){
+        //Check if it drops any weapon at all.
+        //Default, 1/10 chance.
+        GameObject droppedWeapon = EnemyDrop.Drop();
+        if(droppedWeapon != null){
+            Instantiate(droppedWeapon,transform.position, Quaternion.identity);
+        }
+    }
+    
 }
