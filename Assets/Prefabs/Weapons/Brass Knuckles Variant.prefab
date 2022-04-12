@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 542741343748649736, guid: a3b705b486b1c6ed3bd0719550a18265, type: 3}
       propertyPath: m_Name
-      value: Brass Knuckles
+      value: Brass Knuckles Variant
       objectReference: {fileID: 0}
     - target: {fileID: 936041097217549043, guid: a3b705b486b1c6ed3bd0719550a18265, type: 3}
       propertyPath: m_RootOrder
@@ -56,6 +56,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2496482471841641740, guid: a3b705b486b1c6ed3bd0719550a18265, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 2ef77dbdde455479e98e102f25b258d3, type: 3}
+    - target: {fileID: 2496482471841641740, guid: a3b705b486b1c6ed3bd0719550a18265, type: 3}
       propertyPath: type
       value: 4
       objectReference: {fileID: 0}
@@ -71,5 +75,71 @@ PrefabInstance:
       propertyPath: attackSpeed
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 4040406256195047660, guid: a3b705b486b1c6ed3bd0719550a18265, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3b705b486b1c6ed3bd0719550a18265, type: 3}
+--- !u!4 &2006068687801260294 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 936041097217549043, guid: a3b705b486b1c6ed3bd0719550a18265, type: 3}
+  m_PrefabInstance: {fileID: 1669569635801644021}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6932626999137935378
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2006068687801260294}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 7133c00a2fabb4a72a9e5553ef35437d, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7133c00a2fabb4a72a9e5553ef35437d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.338626
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7133c00a2fabb4a72a9e5553ef35437d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.94517076
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7133c00a2fabb4a72a9e5553ef35437d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.184816
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7133c00a2fabb4a72a9e5553ef35437d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.61609304
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7133c00a2fabb4a72a9e5553ef35437d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.37246242
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7133c00a2fabb4a72a9e5553ef35437d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.3590717
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7133c00a2fabb4a72a9e5553ef35437d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5939433
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7133c00a2fabb4a72a9e5553ef35437d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 62.311
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7133c00a2fabb4a72a9e5553ef35437d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7133c00a2fabb4a72a9e5553ef35437d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 87.903
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7133c00a2fabb4a72a9e5553ef35437d, type: 3}
+      propertyPath: m_Name
+      value: brassknuckles
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7133c00a2fabb4a72a9e5553ef35437d, type: 3}

@@ -15,12 +15,6 @@ public class PlayerWeapons : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Weapon temp = new Weapon();
-        temp.damage = 6.0f;
-        temp.range = 5.0f;
-        temp.aoeAngle = 0.5f;
-        temp.attackSpeed = .25f;
-        currentWeapon = temp;
         UpdatePlayerStats();
         UpdateIcon();
     }
