@@ -62,12 +62,12 @@ public class TimeEvents : MonoBehaviour
         en.ClearEnemies();
     }
     public void ClearAirship(){
-        GameObject airship = GetComponent<GetAirship>().airship;
+        GameObject airship = GetAirship.ReturnAirship();
         airship.GetComponent<AirshipHealth>().Disable();
     }
     public void SetInvulnerable(){
-        GameObject player = GetComponent<GetPlayer>().player;
-        player.GetComponent<PlayerHealth>().SetInvulnerable();
+        GameObject player = GetPlayer.ReturnPlayer();
+        PlayerHealth.SetInvulnerable();
     }
     public void ChangeEnemySpawns(){
         EnemySpawner en = GetComponent<EnemySpawner>();

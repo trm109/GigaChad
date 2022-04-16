@@ -48,7 +48,7 @@ public class EnemyHealth : MonoBehaviour
         //Increment player kills
         
         DropItem();    
-        GameObject pl = GetComponent<GetPlayer>().player;
+        GameObject pl = GetPlayer.ReturnPlayer();
         pl.GetComponent<PlayerUpgrades>().kills++;
         Destroy(gameObject);
     }
