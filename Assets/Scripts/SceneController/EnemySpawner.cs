@@ -6,9 +6,14 @@ public class EnemySpawner : MonoBehaviour
 {
     private List<GameObject> enemies = new List<GameObject>();
     public GameObject enemyPrefab;
+    public GameObject enemyPrefabSlow;
+    public GameObject enemyPrefabFast;
     public float currentEnemyStrength = 1.0f;
     private float spawnMinimumDist = 50.0f;
     private float spawnMaximumDist = 75.0f;
+    private float slowChance = 0.5f;
+    private float fastChance = 1.0f;
+    private float regChance = 9.0f;
 
 
     private float spawnCD = 0.0f;
@@ -35,12 +40,30 @@ public class EnemySpawner : MonoBehaviour
         //Assign random position within spawn bounds.
         Vector3 spawnPosition = RandomSpawnVector();
         //Instantiate a gameobject at the new position, and keep reference
-        var newEnemy = Instantiate(enemyPrefab,spawnPosition, Quaternion.identity);
+
+        float type = Random.Range(0, 10);
+
+        if (type < slowChance) { 
+            var newEnemy = Instantiate(enemyPrefabSlow, spawnPosition, Quaternion.identity);
+            AdjustStats(newEnemy);
+            enemies.Add(newEnemy);
+        }
+        else if (type < slowChance + fastChance) { 
+            var newEnemy = Instantiate(enemyPrefabFast, spawnPosition, Quaternion.identity);
+            AdjustStats(newEnemy);
+            enemies.Add(newEnemy);
+        }
+        else { 
+            var newEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            AdjustStats(newEnemy);
+            enemies.Add(newEnemy);
+        }
+        
         //GameObject enemy = Instantiate();
-        AdjustStats(newEnemy);
+        
         //Apply currentEnemyStrength
         //newEnemy.GetComponent<EnemyHealth>().
-        enemies.Add(newEnemy);
+ 
     }
     public void AdjustStats(GameObject enemy){
         float gamePercentOver = Time.realtimeSinceStartup/ 240.0f;

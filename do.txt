@@ -1,1 +1,10 @@
-Swap "Get" scripts to statics.
+Polish Vengeance mode.
+Implement 3d Assets
+Map Constraints:
+    Change player movement to rigidbody based.
+Add minimap:
+    Takes:
+        Enemy positions
+        Player position
+        Const airship position.
+

@@ -27,6 +27,7 @@ public class EnemyMovement : MonoBehaviour
         movement *= speed * Time.deltaTime;
         //Apply to relative rotation.
         rb.velocity = new Vector3(movement.x,0,movement.z);
+        transform.LookAt(target);
     }
 
 }

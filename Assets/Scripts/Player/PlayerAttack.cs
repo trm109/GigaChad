@@ -4,29 +4,39 @@ using UnityEngine;
 using UnityEditor;
 public class PlayerAttack : MonoBehaviour
 {
+    private bool isdown;       //bool for keeping track of whether player is down
+    public void setDown(bool n) { isdown = n; }
+    //public bool getDown() { return isdown; }
+
+
     //Current weapon
+    [SerializeField]
     private static float damage;
     private static float defaultDamage = 6.0f;
     public static float powerMult = 1.0f;
     public static float vengeancePowerMult = 1.0f;
     public static float speedMult = 1.0f;
     public static float vengeanceSpeedMult = 1.0f;
-    public float range;
+    public static float range;
     private bool isPunchLeft = false;
-    //1 = 0 deg, 0 = 90 deg, -1 = 180 deg.
+    //1 = 0 deg, 0 = 180 deg, -1 = 360 deg.
     //.5f = 45deg (total of 90 degree area)
-    public float angle = .5f; 
+    public static float angle = .5f; 
     public Animator anim;
 
     private static float cooldown = 0.0f;
     private static float defaultMaxCooldown = .25f;
     private static float maxCooldown;
+    AttackAnimationHandler attackAnimHandler;
     // Start is called before the first frame update
     void Start()
     {
+        isdown = false;
         anim = GetComponent<Animator>();
         damage = defaultDamage;
         maxCooldown = defaultMaxCooldown;
+        attackAnimHandler = GetComponent<AttackAnimationHandler>();
+        attackAnimHandler.SetSwingAngle(angle);
     }
 
     // Update is called once per frame
@@ -50,7 +60,7 @@ public class PlayerAttack : MonoBehaviour
         }
     }
     private void OnLeftClick(){
-        if(cooldown <= 0){
+        if(cooldown <= 0 && !isdown){
             if(Input.GetMouseButton(0)){
                 anim.SetTrigger("ResetPunch");
                 Attack();
@@ -60,6 +70,7 @@ public class PlayerAttack : MonoBehaviour
                 isPunchLeft = !isPunchLeft;
                 cooldown = maxCooldown;
                 anim.ResetTrigger("ResetPunch");
+                attackAnimHandler.Swing();
             }
         }
     }
@@ -108,5 +119,12 @@ public class PlayerAttack : MonoBehaviour
         }
         //if it doesn't trigger the false checks, return true.
         return true;
+    }
+    public static void ChangeWeapon(float newDamage, float newRange, float newAOE, float newAttackSpeed){
+        defaultDamage = newDamage;
+        range = newRange;
+        angle = newAOE;
+        maxCooldown = newAttackSpeed;
+        CalculateDamage();
     }
 }
