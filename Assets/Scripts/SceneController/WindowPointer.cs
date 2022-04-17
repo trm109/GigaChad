@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class WindowPointer : MonoBehaviour
 {
-    //[SerializedField] private Camera uiCamera;
-
     private Vector3 targetPosition;
     private RectTransform pointerRectTransform;
 
