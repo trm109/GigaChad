@@ -7,11 +7,11 @@ public class UIController : MonoBehaviour
     public GameObject winScreen;
     public GameObject loseScreen;
     
-    public void showWinScreen(){
+    public void ShowWinScreen(){
         winScreen.SetActive(true);
         //lock controls
     }
-    public void showLoseScreen(){
+    public void ShowLoseScreen(){
         loseScreen.SetActive(true);
         //lock controls
     }

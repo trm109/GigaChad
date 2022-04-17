@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIUpgradeButtonUpdate : MonoBehaviour
 {
 
-    [SerializeField] private string targetField = "";
+    [SerializeField] private PlayerUpgrades.UpgradeSkill targetField;
     [SerializeField] private PlayerUpgrades player;
 
     [SerializeField] private Sprite level0;

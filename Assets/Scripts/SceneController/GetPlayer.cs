@@ -8,6 +8,6 @@ public class GetPlayer : MonoBehaviour
     public GameObject player;
     public void Awake(){
         player = GameObject.FindGameObjectWithTag("Player");
-        Debug.Log("GETPLAYER");
+        //Debug.Log("GETPLAYER");
     }
 }

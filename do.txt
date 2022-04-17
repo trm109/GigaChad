@@ -1,18 +1,10 @@
-Scripts:
-    Player movement X
-    PrimitiveCamera Movement X
-    Damagable/Health component <<
-    Player Look script X
-    Player attack script(No extra weapons, barebones)
-        Inputs X
-        AOE Detection
-        Send Damage Signal
-    (SIMPLE) Generic Enemy AI
-    Airship Health X
-    Win/Lose conditions
-Art:
-    Basic outline of map
-    concept art?
-    Some implemented character assets.
-Music:
-    no
+Polish Vengeance mode.
+Implement 3d Assets
+Map Constraints:
+    Change player movement to rigidbody based.
+Add minimap:
+    Takes:
+        Enemy positions
+        Player position
+        Const airship position.
+

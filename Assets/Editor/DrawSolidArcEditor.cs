@@ -26,9 +26,9 @@ public class DrawSolidArcEditor : Editor
         Vector3 startingAngle = t.transform.forward;
         float radAngle = -180 * (t.angle) + 180;
         startingAngle = Quaternion.AngleAxis(-radAngle / 2.0f,Vector3.up) * startingAngle;
-        Debug.Log("Starting Angle: " + startingAngle);
+        //Debug.Log("Starting Angle: " + startingAngle);
 		Handles.color = new Color( 1, 1, 1, 0.2f );
-        Debug.Log(radAngle);
+        //Debug.Log(radAngle);
 		Handles.DrawSolidArc( t.transform.position, t.transform.up, startingAngle,
 								radAngle, t.shieldArea );
 
