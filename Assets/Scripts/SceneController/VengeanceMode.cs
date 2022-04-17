@@ -8,11 +8,13 @@ public class VengeanceMode : MonoBehaviour
     private float vTime = 60.0f;
     private GameObject player;
     private GameObject airship;
+    private GameObject pointer;
     private bool isVengeance = false;
     // Update is called once per frame
     void Update()
     {
         airship = GetComponent<GetAirship>().airship;
+        pointer = GetComponent<GetPointer>().pointer;
         player = GetComponent<GetPlayer>().player;
         if(!isVengeance){
             if(Time.realtimeSinceStartup >= vTime){
@@ -25,6 +27,7 @@ public class VengeanceMode : MonoBehaviour
         Debug.Log("Vengeance Mode Activated");
         KillAllEnemies();
         airship.SetActive(false);
+        pointer.SetActive(false);
         GetTarget.isVengeanceMode = true;
         player.GetComponent<PlayerHealth>().SetInvulnerable();
     }
