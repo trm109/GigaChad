@@ -54,7 +54,8 @@ public class Item : MonoBehaviour
         PlayerHealth.TimedInvulnerable((int) IV_Duration * 1000);
     }
     public void ScoreMultiplier(){
-
+        //permanent, change to temporary eventually.
+        ScoreController.scoreMult *= 1.3f;
     }
     public void BlackHole(){
 

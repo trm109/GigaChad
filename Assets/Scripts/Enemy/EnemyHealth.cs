@@ -46,7 +46,7 @@ public class EnemyHealth : MonoBehaviour
         //do something, idk
         //Debug.Log("Enemy Died");
         //Increment player kills
-        
+        ScoreController.IncreaseScore(5.0f);
         DropItem();    
         GameObject pl = GetPlayer.ReturnPlayer();
         pl.GetComponent<PlayerUpgrades>().kills++;
