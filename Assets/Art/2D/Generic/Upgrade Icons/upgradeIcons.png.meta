@@ -62,9 +62,6 @@ TextureImporter:
   - first:
       213: -4665892980091371344
     second: upgradeIcons_19
-  - first:
-      213: 1870992135037910081
-    second: upgradeIcons_20
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -150,18 +147,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -169,11 +154,11 @@ TextureImporter:
       name: upgradeIcons_0
       rect:
         serializedVersion: 2
-        x: 60
-        y: 2292
-        width: 547
-        height: 600
-      alignment: 9
+        x: 0
+        y: 2172
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -190,11 +175,11 @@ TextureImporter:
       name: upgradeIcons_1
       rect:
         serializedVersion: 2
-        x: 628
-        y: 2272
-        width: 547
-        height: 614
-      alignment: 9
+        x: 708
+        y: 2172
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -211,11 +196,11 @@ TextureImporter:
       name: upgradeIcons_2
       rect:
         serializedVersion: 2
-        x: 1195
-        y: 2247
-        width: 557
-        height: 627
-      alignment: 9
+        x: 1416
+        y: 2172
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -232,11 +217,11 @@ TextureImporter:
       name: upgradeIcons_3
       rect:
         serializedVersion: 2
-        x: 1783
-        y: 2229
-        width: 557
-        height: 636
-      alignment: 9
+        x: 2124
+        y: 2172
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -253,11 +238,11 @@ TextureImporter:
       name: upgradeIcons_4
       rect:
         serializedVersion: 2
-        x: 2367
-        y: 2215
-        width: 674
-        height: 683
-      alignment: 9
+        x: 2832
+        y: 2172
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -274,11 +259,11 @@ TextureImporter:
       name: upgradeIcons_5
       rect:
         serializedVersion: 2
-        x: 60
-        y: 1585
-        width: 547
-        height: 598
-      alignment: 9
+        x: 0
+        y: 1448
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -295,11 +280,11 @@ TextureImporter:
       name: upgradeIcons_6
       rect:
         serializedVersion: 2
-        x: 628
-        y: 1565
-        width: 547
-        height: 612
-      alignment: 9
+        x: 708
+        y: 1448
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -316,11 +301,11 @@ TextureImporter:
       name: upgradeIcons_7
       rect:
         serializedVersion: 2
-        x: 1195
-        y: 1539
-        width: 557
-        height: 627
-      alignment: 9
+        x: 1416
+        y: 1448
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -337,11 +322,11 @@ TextureImporter:
       name: upgradeIcons_8
       rect:
         serializedVersion: 2
-        x: 1783
-        y: 1521
-        width: 557
-        height: 636
-      alignment: 9
+        x: 2124
+        y: 1448
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -358,11 +343,11 @@ TextureImporter:
       name: upgradeIcons_9
       rect:
         serializedVersion: 2
-        x: 2367
-        y: 1506
-        width: 674
-        height: 683
-      alignment: 9
+        x: 2832
+        y: 1448
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -379,11 +364,11 @@ TextureImporter:
       name: upgradeIcons_10
       rect:
         serializedVersion: 2
-        x: 2473
-        y: 1447
-        width: 17
-        height: 6
-      alignment: 9
+        x: 0
+        y: 724
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -400,11 +385,11 @@ TextureImporter:
       name: upgradeIcons_11
       rect:
         serializedVersion: 2
-        x: 54
-        y: 818
-        width: 548
-        height: 599
-      alignment: 9
+        x: 708
+        y: 724
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -421,11 +406,11 @@ TextureImporter:
       name: upgradeIcons_12
       rect:
         serializedVersion: 2
-        x: 622
-        y: 797
-        width: 548
-        height: 614
-      alignment: 9
+        x: 1416
+        y: 724
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -442,11 +427,11 @@ TextureImporter:
       name: upgradeIcons_13
       rect:
         serializedVersion: 2
-        x: 1190
-        y: 772
-        width: 558
-        height: 627
-      alignment: 9
+        x: 2124
+        y: 724
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -463,11 +448,11 @@ TextureImporter:
       name: upgradeIcons_14
       rect:
         serializedVersion: 2
-        x: 1778
-        y: 755
-        width: 556
-        height: 635
-      alignment: 9
+        x: 2832
+        y: 724
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -484,11 +469,11 @@ TextureImporter:
       name: upgradeIcons_15
       rect:
         serializedVersion: 2
-        x: 2363
-        y: 740
-        width: 672
-        height: 683
-      alignment: 9
+        x: 0
+        y: 0
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -505,11 +490,11 @@ TextureImporter:
       name: upgradeIcons_16
       rect:
         serializedVersion: 2
-        x: 54
-        y: 107
-        width: 548
-        height: 598
-      alignment: 9
+        x: 708
+        y: 0
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -526,11 +511,11 @@ TextureImporter:
       name: upgradeIcons_17
       rect:
         serializedVersion: 2
-        x: 622
-        y: 87
-        width: 547
-        height: 612
-      alignment: 9
+        x: 1416
+        y: 0
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -547,11 +532,11 @@ TextureImporter:
       name: upgradeIcons_18
       rect:
         serializedVersion: 2
-        x: 1190
-        y: 61
-        width: 558
-        height: 627
-      alignment: 9
+        x: 2124
+        y: 0
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -568,11 +553,11 @@ TextureImporter:
       name: upgradeIcons_19
       rect:
         serializedVersion: 2
-        x: 1778
-        y: 43
-        width: 556
-        height: 636
-      alignment: 9
+        x: 2832
+        y: 0
+        width: 708
+        height: 724
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -585,31 +570,10 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: upgradeIcons_20
-      rect:
-        serializedVersion: 2
-        x: 2363
-        y: 28
-        width: 672
-        height: 683
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14cfb721f6917f910800000000000000
-      internalID: 1870992135037910081
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d8f1c071a2a12c38da8fd1ded20763ff
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
