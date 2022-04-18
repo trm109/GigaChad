@@ -2627,6 +2627,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 954392854601800629, guid: d5fb736461b8af853adbd503a7c09fb2, type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 448147443897463570, guid: ee2edc52f4a8c846f8ee3e6c1b28f3a1, type: 3}
+    - target: {fileID: 954392854601800629, guid: d5fb736461b8af853adbd503a7c09fb2, type: 3}
       propertyPath: enemyPrefabFast
       value: 
       objectReference: {fileID: 628843692248507894, guid: 59e0462052657234e907132d35cf4d71, type: 3}
