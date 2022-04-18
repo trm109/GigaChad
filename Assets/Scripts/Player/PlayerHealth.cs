@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
+using System.Threading.Tasks;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -10,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private static float health = 10.0f;
     public static float healthMult = 1.0f;
-    private static float maxHealth;
+    public static float maxHealth;
     private bool isdown;            //boolean for if player is down or not
     private float timer;            //timer to keep track of how long player has been down
     private int nDown;              //counter to keep track of how many times player has gone down
@@ -88,7 +90,7 @@ public class PlayerHealth : MonoBehaviour
     {
         return health;
     }
-    public void SetInvulnerable(){
+    public static void SetInvulnerable(){
         isInvincible = true;
     }
     public static void CalculateHealth()
@@ -96,5 +98,10 @@ public class PlayerHealth : MonoBehaviour
         maxHealth = defaultMaxHealth * healthMult;
         //for the time being, health will also just be set to the max health upon increase
         health = maxHealth;
+    }
+    public static async Task TimedInvulnerable(int t){
+        SetInvulnerable();
+        await Task.Delay(t);
+        isInvincible = false;
     }
 }

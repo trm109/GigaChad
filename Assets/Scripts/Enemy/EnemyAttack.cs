@@ -16,10 +16,10 @@ public class EnemyAttack : MonoBehaviour
     {
         IncreaseAttack(Time.realtimeSinceStartup / 240.0f);
         if(GetComponent<GetTarget>().playertarget){
-            target = GetComponent<GetPlayer>().player;
+            target = GetPlayer.ReturnPlayer();
             //Debug.Log("Assigned target to Player");
         }else{
-            target = GetComponent<GetAirship>().airship;
+            target = GetAirship.ReturnAirship();
             //Debug.Log("Assigned target to Airship");
         }
     }
@@ -42,7 +42,10 @@ public class EnemyAttack : MonoBehaviour
     {
         //Cooldown
         if(cooldown <= 0){
-            if(Vector3.Distance(transform.position,target.transform.position) <= attackRange){
+            if(Vector3.Distance(
+                transform.position,
+                target.transform.position) 
+                <= attackRange){
                 Attack();
                 cooldown = maxCooldown;
             }

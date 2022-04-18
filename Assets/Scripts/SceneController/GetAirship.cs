@@ -5,9 +5,9 @@ using UnityEngine;
 public class GetAirship : MonoBehaviour
 {
     [SerializeField]
-    public GameObject airship;
-    public void Awake(){
+    public static GameObject airship;
+    public static GameObject ReturnAirship(){
         airship = GameObject.FindGameObjectWithTag("Airship");
-        //Debug.Log("GETAIRSHIP");
+        return airship;
     }
 }

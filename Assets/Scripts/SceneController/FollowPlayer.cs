@@ -14,7 +14,7 @@ public class FollowPlayer : MonoBehaviour
     void Start()
     {
         Debug.Log("Referencing!");
-        player = GetComponent<GetPlayer>().player;
+        player = GetPlayer.ReturnPlayer();
         initialOffset = transform.position - player.transform.position;
     }
 
@@ -24,7 +24,7 @@ public class FollowPlayer : MonoBehaviour
         if(player){
             transform.position = player.transform.position + initialOffset;
         }else{
-            player = GetComponent<GetPlayer>().player;
+            player = GetPlayer.ReturnPlayer();
         }
     }
 }

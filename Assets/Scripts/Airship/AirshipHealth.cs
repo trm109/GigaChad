@@ -5,8 +5,8 @@ using UnityEngine;
 public class AirshipHealth : MonoBehaviour
 {
     [SerializeField]
-    private float health;
-    private float maxHealth = 200f;
+    private static float health;
+    public static float maxHealth = 200f;
 
     [SerializeField]
     private HealthBar healthBar;    //Reference to the health bar
