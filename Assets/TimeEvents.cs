@@ -10,6 +10,7 @@ public class TimeEvents : MonoBehaviour
     private const float defendTimeDuration = 60.0f; // update to 4 minutes for actual gameplay.
     private static float vengeanceModeDuration = 30.0f; //Variable, changes.
     public static bool isVengeanceMode = false;
+    [SerializeField] private GameObject vm;   //Holds a reference to the splash screen that displays when vengance mode begins.
 
     [SerializeField] private Timer timerUI;
     // Start is called before the first frame update
@@ -56,6 +57,7 @@ public class TimeEvents : MonoBehaviour
         SetInvulnerable();
         ChangeEnemySpawns();
         AlterUI();
+        ShowVMSplash();
     }
     public void ClearEnemies(){
         EnemySpawner en = GetComponent<EnemySpawner>();
@@ -76,5 +78,9 @@ public class TimeEvents : MonoBehaviour
     }
     public void AlterUI(){
         
+    }
+    public void ShowVMSplash()
+    {
+        vm.SetActive(true);
     }
 }
