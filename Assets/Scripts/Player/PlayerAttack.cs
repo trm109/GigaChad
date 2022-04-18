@@ -71,6 +71,12 @@ public class PlayerAttack : MonoBehaviour
                 cooldown = maxCooldown;
                 anim.ResetTrigger("ResetPunch");
                 attackAnimHandler.Swing();
+                if((attackAnimHandler.currentWeapon == 0)){
+                    Debug.Log("Jab");
+                    attackAnimHandler.Jab();
+                }else{
+                    Debug.Log("NotJab");
+                }
                 GetComponent<AttackAudio>().play();
             }
         }
