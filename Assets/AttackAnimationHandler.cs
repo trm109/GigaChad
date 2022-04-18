@@ -47,16 +47,25 @@ public class AttackAnimationHandler : MonoBehaviour
         if(GetComponent<PlayerWeapons>().currentWeapon.type == Weapon.WeaponType.Sword){
             currentWeapon = 1;
             sword.SetActive(true);
+        }else{
+            if(GetComponent<PlayerWeapons>().currentWeapon.type == Weapon.WeaponType.Axe){
+                currentWeapon = 2;
+                axe.SetActive(true);
+            }else{
+                if(GetComponent<PlayerWeapons>().currentWeapon.type == Weapon.WeaponType.Morningstar){
+                    currentWeapon = 3;
+                    morningstar.SetActive(true);
+                }else{
+                    currentWeapon = 0;
+                }
+            }
         }
-        if(GetComponent<PlayerWeapons>().currentWeapon.type == Weapon.WeaponType.Axe){
-            currentWeapon = 2;
-            axe.SetActive(true);
-        }
-        if(GetComponent<PlayerWeapons>().currentWeapon.type == Weapon.WeaponType.Morningstar){
-            currentWeapon = 3;
-            morningstar.SetActive(true);
-        }
+
         swinging = true;
+
+    }
+    public void Jab(){
+        jabObj.GetComponent<ParticleSystem>().time = 0;
     }
     public void SetSwingAngle(float dotAngle){
         dotAngle *= -1f;

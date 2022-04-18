@@ -130,7 +130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2496482471841641740, guid: a3b705b486b1c6ed3bd0719550a18265, type: 3}
       propertyPath: aoeAngle
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2496482471841641740, guid: a3b705b486b1c6ed3bd0719550a18265, type: 3}
       propertyPath: attackSpeed
