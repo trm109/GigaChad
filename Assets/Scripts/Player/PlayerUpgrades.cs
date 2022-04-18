@@ -45,12 +45,9 @@ public class PlayerUpgrades : MonoBehaviour
             Upgrade(UpgradeSkill.Vengeance);
         }
         if(Input.GetKeyDown(KeyCode.Alpha2)){
-            Upgrade(UpgradeSkill.RNG);
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha3)){
             Upgrade(UpgradeSkill.Health);
         }
-        if(Input.GetKeyDown(KeyCode.Alpha4)){
+        if(Input.GetKeyDown(KeyCode.Alpha3)){
             Upgrade(UpgradeSkill.Power);
         }
     }
@@ -68,18 +65,6 @@ public class PlayerUpgrades : MonoBehaviour
                             Debug.Log("Upgraded Vengeance to level " + skillVengeance);
                         }else{
                             Debug.Log("Not enough kills" + kills + " " + upgradeCost[skillVengeance+1]);
-                        }
-                    }
-                    break;
-                case UpgradeSkill.RNG:
-                    if(skillRNG >= SKILLCAP){
-                        Debug.Log("Skill is already maxed");
-                    }else{
-                        if(kills >= upgradeCost[skillRNG]){
-                            kills -= upgradeCost[skillRNG];
-                            public void UpgradeRNG(skillRNG);
-                            skillRNG++;
-                            Debug.Log("Upgraded RNG to level " + skillRNG);
                         }
                     }
                     break;
@@ -143,8 +128,6 @@ public class PlayerUpgrades : MonoBehaviour
         {
             case UpgradeSkill.Vengeance:
                 return skillVengeance;
-            case UpgradeSkill.RNG:
-                return skillRNG;
             case UpgradeSkill.Health:
                 return skillHealth;
             case UpgradeSkill.Power:
