@@ -63,6 +63,7 @@ public class PlayerUpgrades : MonoBehaviour
                     }else{
                         if(kills >= upgradeCost[skillVengeance]){
                             kills -= upgradeCost[skillVengeance];
+                            UpgradeVengeance(skillVengeance);
                             skillVengeance++;
                             Debug.Log("Upgraded Vengeance to level " + skillVengeance);
                         }else{
@@ -76,6 +77,7 @@ public class PlayerUpgrades : MonoBehaviour
                     }else{
                         if(kills >= upgradeCost[skillRNG]){
                             kills -= upgradeCost[skillRNG];
+                            public void UpgradeRNG(skillRNG);
                             skillRNG++;
                             Debug.Log("Upgraded RNG to level " + skillRNG);
                         }
@@ -87,6 +89,7 @@ public class PlayerUpgrades : MonoBehaviour
                     }else{
                         if(kills >= upgradeCost[skillHealth]){
                             kills -= upgradeCost[skillHealth];
+                            UpgradeHealth(skillHealth);
                             skillHealth++;
                             Debug.Log("Upgraded Health to level " + skillHealth);
                         }
@@ -98,6 +101,7 @@ public class PlayerUpgrades : MonoBehaviour
                     }else{
                         if(kills >= upgradeCost[skillPower]){
                             kills -= upgradeCost[skillPower];
+                            UpgradePower(skillPower);
                             skillPower++;
                             
                             Debug.Log("Upgraded Power to level " + skillPower);

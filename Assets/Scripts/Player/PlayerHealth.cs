@@ -67,7 +67,7 @@ public class PlayerHealth : MonoBehaviour
             else { timer = 10f; }
             model.transform.Rotate(-90.0f, 0f, 0f);
         }
-        
+        Debug.Log(health.ToString());
         healthBar.SetValue(health);         //continuously update health bar for the player
     }
     //Can heal too.
