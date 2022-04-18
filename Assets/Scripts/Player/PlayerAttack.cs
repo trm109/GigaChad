@@ -71,6 +71,7 @@ public class PlayerAttack : MonoBehaviour
                 cooldown = maxCooldown;
                 anim.ResetTrigger("ResetPunch");
                 attackAnimHandler.Swing();
+                GetComponent<AttackAudio>().play();
             }
         }
     }

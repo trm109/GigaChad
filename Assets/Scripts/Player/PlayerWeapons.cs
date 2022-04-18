@@ -25,6 +25,7 @@ public class PlayerWeapons : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E)){
             if(nearbyWeapons.Count > 0){
                 currentWeapon = nearbyWeapons[0].Pickup();
+                audioPicker();
                 var temp = nearbyWeapons[0];
                 nearbyWeapons.Remove(temp);
                 temp.DestroyThis();
@@ -33,6 +34,26 @@ public class PlayerWeapons : MonoBehaviour
             }
         }
     }
+
+    private void audioPicker() {
+        if (currentWeapon.type == Weapon.WeaponType.Fist) {
+            GetComponent<AttackAudio>().setCounter(1);
+        }
+        else if (currentWeapon.type == Weapon.WeaponType.Brass_Knuckles) {
+            GetComponent<AttackAudio>().setCounter(2);
+        }
+        else if (currentWeapon.type == Weapon.WeaponType.Sword) {
+            GetComponent<AttackAudio>().setCounter(3);
+        }
+        else if (currentWeapon.type == Weapon.WeaponType.Morningstar) {
+            GetComponent<AttackAudio>().setCounter(4);
+        }
+        else if (currentWeapon.type == Weapon.WeaponType.Axe) {
+            GetComponent<AttackAudio>().setCounter(5);
+        }
+    }
+
+
     private void OnTriggerEnter(Collider other) {
         if(other.GetComponent<Weapon>()){
             nearbyWeapons.Add(other.GetComponent<Weapon>());
@@ -57,3 +78,9 @@ public class PlayerWeapons : MonoBehaviour
     }
     //
 }
+
+
+
+
+
+
