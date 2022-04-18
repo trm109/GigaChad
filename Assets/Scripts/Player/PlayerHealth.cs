@@ -43,6 +43,9 @@ public class PlayerHealth : MonoBehaviour
         isdown = b;
         GetComponent<PlayerAttack>().setDown(b);
         GetComponent<PlayerLook>().setDown(b);
+        if(b){
+            transform.localEulerAngles = new Vector3(-90, transform.localEulerAngles.y,transform.localEulerAngles.z); 
+        }
     }
 
     void Update()
