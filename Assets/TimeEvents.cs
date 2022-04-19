@@ -36,7 +36,7 @@ public class TimeEvents : MonoBehaviour
         }else{
             if(Time.realtimeSinceStartup >= (defendTimeDuration + vengeanceModeDuration)){
                 //Game Over.
-                //wl.Win();
+                wl.Win();
             }else{
                 // should count down.
                 // (defendTime + vModeDuration) - Time.realtimeSinceStartup
