@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour
     //Private variables
     [SerializeField]
     private float health = 10.0f;
+    [SerializeField]
     private float maxHealth = 10.0f;
     [SerializeField]
     private Slider healthBar;

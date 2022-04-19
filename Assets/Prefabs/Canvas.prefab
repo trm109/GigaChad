@@ -3478,6 +3478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Score
       objectReference: {fileID: 0}
+    - target: {fileID: 1193440417882040561, guid: d76340c18ca18d13ab211af871c83666, type: 3}
+      propertyPath: m_TagString
+      value: Score
+      objectReference: {fileID: 0}
     - target: {fileID: 1193440417882040562, guid: d76340c18ca18d13ab211af871c83666, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
