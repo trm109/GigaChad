@@ -23,4 +23,8 @@ public class ScoreController : MonoBehaviour
     public static void AllignScore(){
         scoreText.text = score.ToString();
     }
+    public float GetScore()
+    {
+        return score;
+    }
 }
