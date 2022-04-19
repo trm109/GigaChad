@@ -8,6 +8,8 @@ TagManager:
   - Airship
   - Canvas
   - Score
+  - GOScore
+  - GOHiScore
   layers:
   - Default
   - TransparentFX
