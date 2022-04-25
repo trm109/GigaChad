@@ -1044,6 +1044,19 @@ MonoBehaviour:
   currentWeapon: {fileID: 2496482471841641740, guid: a3b705b486b1c6ed3bd0719550a18265, type: 3}
   nearbyWeapons: []
   wim: {fileID: 1054234786}
+--- !u!114 &618828941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618828926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c77dccfee9837644b6094b7923a476d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseScreen: {fileID: 1502234756}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,6 +2144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d5e7440e8c6d3488f42a8e2835962a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1502234756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4055644436184324353, guid: 4aef9e727fa55f6258c3a9d667c774a9, type: 3}
+  m_PrefabInstance: {fileID: 2555427498703214472}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1603750700 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3108585392482931326, guid: 4aef9e727fa55f6258c3a9d667c774a9, type: 3}
@@ -2818,6 +2836,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6a90c1729d1989d45bec334b90d0a3ea, type: 3}
+    - target: {fileID: 4343905327696531201, guid: 4aef9e727fa55f6258c3a9d667c774a9, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 4930889253264370464, guid: 4aef9e727fa55f6258c3a9d667c774a9, type: 3}
       propertyPath: m_Colors.m_ColorMultiplier
       value: 1
