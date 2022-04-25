@@ -25,6 +25,7 @@ public class PlayerWeapons : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E)){
             if(nearbyWeapons.Count > 0){
                 currentWeapon = nearbyWeapons[0].Pickup();
+                PlayerAttack.maxCooldown = currentWeapon.attackSpeed;
                 audioPicker();
                 var temp = nearbyWeapons[0];
                 nearbyWeapons.Remove(temp);

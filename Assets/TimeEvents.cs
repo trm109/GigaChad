@@ -7,45 +7,51 @@ using UnityEngine;
 public class TimeEvents : MonoBehaviour
 {
     [SerializeField]
-    private const float defendTimeDuration = 30.0f; // update to 4 minutes for actual gameplay.
+    private const float defendTimeDuration = 60.0f; // update to 4 minutes for actual gameplay.
     private static float vengeanceModeDuration = 30.0f; //Variable, changes.
     public static bool isVengeanceMode = false;
     [SerializeField] private GameObject vm;   //Holds a reference to the splash screen that displays when vengance mode begins.
     public WinLose wl;
-
+    public static float totalTime = 0.0f;
     [SerializeField] private Timer timerUI;
     // Start is called before the first frame update
     void Start()
     {
         wl = GetComponent<WinLose>();
+        totalTime = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timerUI.UpdateText(Time.realtimeSinceStartup);
+        timerUI.UpdateText(totalTime);
         if(!isVengeanceMode){
-            if(Time.realtimeSinceStartup >= defendTimeDuration){
+            if(totalTime >= defendTimeDuration){
                 //Switch to Vengeance Mode.
                 StartVengeanceMode();
                 //Change text to red.
                 timerUI.ChangeColor(Color.red);
             }else{
-                timerUI.UpdateText(Time.realtimeSinceStartup);
+                timerUI.UpdateText(totalTime);
             }
         }else{
-            if(Time.realtimeSinceStartup >= (defendTimeDuration + vengeanceModeDuration)){
+            if(totalTime >= (defendTimeDuration + vengeanceModeDuration)){
                 //Game Over.
                 wl.Win();
             }else{
                 // should count down.
-                // (defendTime + vModeDuration) - Time.realtimeSinceStartup
-                timerUI.UpdateText((defendTimeDuration + vengeanceModeDuration) - Time.realtimeSinceStartup);
+                // (defendTime + vModeDuration) - totalTime
+                timerUI.UpdateText((defendTimeDuration + vengeanceModeDuration) - totalTime);
             }
         }
-        if(Time.realtimeSinceStartup >= (defendTimeDuration + vengeanceModeDuration)){
+        if(totalTime >= (defendTimeDuration + vengeanceModeDuration)){
             wl.Win();
         }
+        //update time.
+        UpdateTimer();
+    }
+    public void UpdateTimer(){
+        totalTime += Time.deltaTime;
     }
     //set bool.
     //clear enemies (with vfx)

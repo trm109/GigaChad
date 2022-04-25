@@ -18,7 +18,6 @@ public class EnemyHealth : MonoBehaviour
     private GameObject item;
     private GameObject itemInstance;
 
-
     // Start is called before the first frame update
     void Start()
     {

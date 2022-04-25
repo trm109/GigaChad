@@ -13,7 +13,7 @@ public class AttackAnimationHandler : MonoBehaviour
     public float swingStartAngle;
     public float animSpeed;
     public float animCurrentTime;
-    public float animMaxTime = 0.2f;
+    public float animMaxTime = 0.1f;
     private bool swinging = false;
     private bool jabbing = false;
     public int currentWeapon = 0;
@@ -65,7 +65,7 @@ public class AttackAnimationHandler : MonoBehaviour
 
     }
     public void Jab(){
-        jabObj.GetComponent<ParticleSystem>().time = 0;
+        jabObj.GetComponent<ParticleSystem>().Emit(1);
     }
     public void SetSwingAngle(float dotAngle){
         dotAngle *= -1f;

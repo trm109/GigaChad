@@ -26,7 +26,7 @@ public class PlayerAttack : MonoBehaviour
 
     private static float cooldown = 0.0f;
     private static float defaultMaxCooldown = .25f;
-    private static float maxCooldown;
+    public static float maxCooldown;
     AttackAnimationHandler attackAnimHandler;
     // Start is called before the first frame update
     void Start()
@@ -53,23 +53,24 @@ public class PlayerAttack : MonoBehaviour
     public static void CalculateDamage(){
         if(!TimeEvents.isVengeanceMode){
             damage = defaultDamage * powerMult;
-            maxCooldown = defaultMaxCooldown * speedMult;
+            maxCooldown = maxCooldown * speedMult;
         }else{
             damage = defaultDamage * powerMult * vengeancePowerMult;
-            maxCooldown = defaultMaxCooldown * speedMult * vengeanceSpeedMult;
+            maxCooldown = maxCooldown * speedMult * vengeanceSpeedMult;
         }
     }
     private void OnLeftClick(){
         if(cooldown <= 0 && !isdown){
             if(Input.GetMouseButton(0)){
-                anim.SetTrigger("ResetPunch");
+                //anim.SetTrigger("ResetPunch");
                 Attack();
-                anim.ResetTrigger("isLeftPunch");
-                anim.SetBool("isLeftPunch", isPunchLeft);
-                anim.SetTrigger("Punch"); 
+                Debug.Log("ATTACK");
+                //anim.ResetTrigger("isLeftPunch");
+                //anim.SetBool("isLeftPunch", isPunchLeft);
+                //anim.SetTrigger("Punch"); 
                 isPunchLeft = !isPunchLeft;
                 cooldown = maxCooldown;
-                anim.ResetTrigger("ResetPunch");
+                //anim.ResetTrigger("ResetPunch");
                 attackAnimHandler.Swing();
                 if((attackAnimHandler.currentWeapon == 0)){
                     Debug.Log("Jab");

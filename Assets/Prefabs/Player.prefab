@@ -5641,7 +5641,7 @@ MonoBehaviour:
   swingStartAngle: 0
   animSpeed: 0
   animCurrentTime: 0
-  animMaxTime: 0.5
+  animMaxTime: 0.2
   currentWeapon: 0
 --- !u!1 &8932700701841444712
 GameObject:

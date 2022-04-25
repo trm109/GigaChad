@@ -67,6 +67,7 @@ public class PlayerUpgrades : MonoBehaviour
                             kills -= upgradeCost[skillVengeance];
                             skillVengeance++;
                             Debug.Log("Upgraded Vengeance to level " + skillVengeance);
+                            UpgradeVengeance(skillVengeance);
                         }else{
                             Debug.Log("Not enough kills" + kills + " " + upgradeCost[skillVengeance+1]);
                         }
@@ -80,6 +81,7 @@ public class PlayerUpgrades : MonoBehaviour
                             kills -= upgradeCost[skillRNG];
                             skillRNG++;
                             Debug.Log("Upgraded RNG to level " + skillRNG);
+                            UpgradeRNG(skillRNG);
                         }
                     }
                     break;
@@ -91,6 +93,7 @@ public class PlayerUpgrades : MonoBehaviour
                             kills -= upgradeCost[skillHealth];
                             skillHealth++;
                             Debug.Log("Upgraded Health to level " + skillHealth);
+                            UpgradeHealth(skillHealth);
                         }
                     }
                     break;
@@ -103,6 +106,7 @@ public class PlayerUpgrades : MonoBehaviour
                             skillPower++;
                             
                             Debug.Log("Upgraded Power to level " + skillPower);
+                            UpgradePower(skillPower);
                         }
                     }
                     break;
@@ -123,7 +127,8 @@ public class PlayerUpgrades : MonoBehaviour
         PlayerAttack.CalculateDamage();
     }
     public void UpgradeRNG(int tier){
-
+        //default 8 percent.
+        EnemyDrop.dropchance = rngMidTiers[tier];
     }
     public void UpgradeHealth(int tier){
         PlayerHealth.healthMult = healthTiers[tier];
