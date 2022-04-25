@@ -30,16 +30,33 @@ public class PlayerUpgrades : MonoBehaviour
     public int skillHealth = 0;
     public int skillPower = 0;
 
-    public int kills = 0;
+    private int kills = 0;
 
     private const int SKILLCAP = 4;
 
     public static int score = 0;
-
+    private static int[] curUpgradeCosts = new int[4];
+    private void Start() {
+        UpdateUpgradeCosts();
+    }
     // Start is called before the first frame update
-    void Start()
-    {
-    
+    private void UpdateUpgradeCosts(){
+        // 0 = Vengeance.
+        // 1 = RNG
+        // 2 = Health
+        // 3 = Power
+        curUpgradeCosts[0] = upgradeCost[skillVengeance];
+        curUpgradeCosts[1] = upgradeCost[skillRNG];
+        curUpgradeCosts[2] = upgradeCost[skillHealth];
+        curUpgradeCosts[3] = upgradeCost[skillPower];
+        CheckUpgradeAbility();
+    }
+    private void CheckUpgradeAbility(){
+        Debug.Log("Costs: " + curUpgradeCosts[0] + ", " +  curUpgradeCosts[1] + ", " +  curUpgradeCosts[2] + ", " +  curUpgradeCosts[3] + ".");
+        NotificationKey.key_1.SetActive((curUpgradeCosts[0] <= kills));
+        NotificationKey.key_2.SetActive((curUpgradeCosts[1] <= kills));
+        NotificationKey.key_3.SetActive((curUpgradeCosts[2] <= kills));
+        NotificationKey.key_4.SetActive((curUpgradeCosts[3] <= kills));
     }
     private void Update() {
         if(Input.GetKeyDown(KeyCode.Alpha1)){
@@ -118,26 +135,38 @@ public class PlayerUpgrades : MonoBehaviour
 
     public int GetKills()
     {
+
         return kills;
     }
+    public void IncrementKills(int amnt = 1){
+        kills += amnt;
+        CheckUpgradeAbility();
+        //Check for upgradability.
+    }
+
+
     public void UpgradeVengeance(int tier){
         //GetComponent<PlayerAttack>().
         PlayerAttack.vengeancePowerMult = vengeancePowerTiers[tier];
         PlayerAttack.vengeanceSpeedMult = 1.0f;
         PlayerAttack.CalculateDamage();
+        UpdateUpgradeCosts();
     }
     public void UpgradeRNG(int tier){
         //default 8 percent.
         EnemyDrop.dropchance = rngMidTiers[tier];
+        UpdateUpgradeCosts();
     }
     public void UpgradeHealth(int tier){
         PlayerHealth.healthMult = healthTiers[tier];
         PlayerHealth.CalculateHealth();
+        UpdateUpgradeCosts();
     }
     public void UpgradePower(int tier){
         PlayerAttack.powerMult = powerDamageTiers[tier];
         PlayerAttack.speedMult = powerSpeedTiers[tier];
         PlayerAttack.CalculateDamage();
+        UpdateUpgradeCosts();
     }
     
     public int GetCurrentLevel(UpgradeSkill upgradeSkill)

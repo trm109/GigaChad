@@ -49,7 +49,7 @@ public class EnemyHealth : MonoBehaviour
         ScoreController.IncreaseScore(5.0f);
         DropItem();    
         GameObject pl = GetPlayer.ReturnPlayer();
-        pl.GetComponent<PlayerUpgrades>().kills++;
+        pl.GetComponent<PlayerUpgrades>().IncrementKills();
         Destroy(gameObject);
     }
     //Implement RNG upgrades.
