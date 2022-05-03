@@ -7,8 +7,8 @@ using UnityEngine;
 public class TimeEvents : MonoBehaviour
 {
     [SerializeField]
-    private const float defendTimeDuration = 60.0f; // update to 4 minutes for actual gameplay.
-    private static float vengeanceModeDuration = 30.0f; //Variable, changes.
+    private const float defendTimeDuration = 240.0f; // update to 4 minutes for actual gameplay.
+    private static float vengeanceModeDuration = 60.0f; //Variable, changes.
     public static bool isVengeanceMode = false;
     [SerializeField] private GameObject vm;   //Holds a reference to the splash screen that displays when vengance mode begins.
     public WinLose wl;
