@@ -10,6 +10,8 @@ public class NotificationKey : MonoBehaviour
     public static GameObject key_4;
     [SerializeField]
     private int staticInstanceNum = -1;
+    [SerializeField]
+    public GameObject pressedObject;
     private float toggle;
     private void Start() {
         if(staticInstanceNum == -1){
@@ -37,10 +39,10 @@ public class NotificationKey : MonoBehaviour
     }
     private void Update() {
         if((int) Time.realtimeSinceStartup % 2 == 0){
-            GetComponent<Image>().color = new Color(.75f,.75f,.75f,.75f);
+            pressedObject.SetActive(true);
             //Debug.Log("Boop");
         }else{
-            GetComponent<Image>().color =  new Color(.5f,.5f,.5f,.75f);
+            pressedObject.SetActive(false);
             //Debug.Log("Beep");
         }
     }
