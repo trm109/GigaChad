@@ -13,9 +13,9 @@ public class NotificationKey : MonoBehaviour
     private float toggle;
     private void Start() {
         if(staticInstanceNum == -1){
-            Debug.Log("Not assigning static instance.");
+            //Debug.Log("Not assigning static instance.");
         }else{
-            Debug.Log("Assigning Key to static instance: " + staticInstanceNum);
+            //Debug.Log("Assigning Key to static instance: " + staticInstanceNum);
             switch (staticInstanceNum){
                 case 1:
                     NotificationKey.key_1 = this.gameObject;
@@ -38,10 +38,10 @@ public class NotificationKey : MonoBehaviour
     private void Update() {
         if((int) Time.realtimeSinceStartup % 2 == 0){
             GetComponent<Image>().color = new Color(.75f,.75f,.75f,.75f);
-            Debug.Log("Boop");
+            //Debug.Log("Boop");
         }else{
             GetComponent<Image>().color =  new Color(.5f,.5f,.5f,.75f);
-            Debug.Log("Beep");
+            //Debug.Log("Beep");
         }
     }
 }

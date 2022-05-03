@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="MorningstarSound_data" version="1.3.0" audacityversion="2.4.1" sel0="0.0000000000" sel1="0.6354875283" vpos="0" h="0.0000000000" zoom="2061.3873106061" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="Software" value="Lavf58.45.100"/>
+		<tag name="compatible_brands" value="isomiso2mp41"/>
+		<tag name="minor_version" value="512"/>
+		<tag name="major_brand" value="isom"/>
+	</tags>
+	<wavetrack name="MorningstarSound" isSelected="0" height="150" minimized="0" channel="0" linked="1" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="28025">
+				<waveblock start="0">
+					<simpleblockfile filename="eff1f326.au" len="28025" min="-0.240634" max="0.235068" rms="0.047882"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="MorningstarSound" isSelected="0" height="150" minimized="0" channel="1" linked="0" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="28025">
+				<waveblock start="0">
+					<simpleblockfile filename="eff1febf.au" len="28025" min="-0.240634" max="0.235068" rms="0.047882"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

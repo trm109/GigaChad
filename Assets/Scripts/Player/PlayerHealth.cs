@@ -73,7 +73,12 @@ public class PlayerHealth : MonoBehaviour
             model.transform.Rotate(-90.0f, 0f, 0f);
         }
         
+        
         healthBar.SetValue(health);         //continuously update health bar for the player
+        if(isdown){
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            transform.localEulerAngles = new Vector3(-90,-115,0);
+        }
     }
     //Can heal too.
     public void Damage(float dmg){

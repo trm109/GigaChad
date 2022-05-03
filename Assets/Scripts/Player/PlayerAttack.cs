@@ -72,11 +72,8 @@ public class PlayerAttack : MonoBehaviour
                 cooldown = maxCooldown;
                 //anim.ResetTrigger("ResetPunch");
                 attackAnimHandler.Swing();
-                if((attackAnimHandler.currentWeapon == 0)){
-                    Debug.Log("Jab");
-                    //attackAnimHandler.Jab();
-                }else{
-                    //Debug.Log("NotJab");
+                if((GetComponent<PlayerWeapons>().currentWeapon.type == Weapon.WeaponType.Fist) || (GetComponent<PlayerWeapons>().currentWeapon.type == Weapon.WeaponType.Brass_Knuckles)){
+                    GetComponent<AttackAnimationHandler>().Jab();
                 }
                 GetComponent<AttackAudio>().play();
             }

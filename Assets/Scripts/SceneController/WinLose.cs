@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class WinLose : MonoBehaviour
 {
-    [SerializeField] private ScoreController sc;    //reference to player score
-
-    public void Win(){
+    [SerializeField] private static ScoreController sc;    //reference to player score
+    public void Start(){
+        sc = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreController>();
+    }
+    public static void Win(){
         //Print Score
         //Add score to leaderboard
         //Show Play Again/Quit buttons.
         SaveScore();
         Application.LoadLevel("GameOverScreen");
     }
-    public void Lose(){
+    public static void Lose(){
         //Show sad message
         //dunno really
         SaveScore();
         Application.LoadLevel("GameOverScreen");
     }
-    public void SaveScore()
+    public static void SaveScore()
     {
         PlayerPrefs.SetFloat("score", sc.GetScore());
     }

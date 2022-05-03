@@ -38,7 +38,7 @@ public class AttackAudio : MonoBehaviour
                 a.PlayOneShot(morningstar, 1.0f);
                 break;
             case 5:
-                a.PlayOneShot(fist, 1.0f);
+                a.PlayOneShot(axe, 1.0f);
                 break;
             default:
                 break;

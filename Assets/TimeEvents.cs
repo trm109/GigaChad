@@ -37,7 +37,7 @@ public class TimeEvents : MonoBehaviour
         }else{
             if(totalTime >= (defendTimeDuration + vengeanceModeDuration)){
                 //Game Over.
-                wl.Win();
+                WinLose.Win();
             }else{
                 // should count down.
                 // (defendTime + vModeDuration) - totalTime
@@ -45,7 +45,7 @@ public class TimeEvents : MonoBehaviour
             }
         }
         if(totalTime >= (defendTimeDuration + vengeanceModeDuration)){
-            wl.Win();
+            WinLose.Win();
         }
         //update time.
         UpdateTimer();

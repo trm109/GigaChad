@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float getSpeed() { return speed; }
 
-    void Update()
+    void LateUpdate()
     {
 
         transform.position = new Vector3(transform.position.x,0,transform.position.z);

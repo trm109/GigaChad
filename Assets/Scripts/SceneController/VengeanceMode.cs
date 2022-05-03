@@ -16,7 +16,7 @@ public class VengeanceMode : MonoBehaviour
         airship = GetAirship.ReturnAirship();
         player = GetPlayer.ReturnPlayer();
         if(!isVengeance){
-            if(T >= vTime){
+            if(TimeEvents.totalTime >= vTime){
                 StartVengeanceMode();
             }
         }
